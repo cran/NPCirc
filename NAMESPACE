@@ -1,0 +1,8 @@
+#useDynLib(NPCirc)
+import(circular)
+import(movMF)
+import(plotrix) 
+import(shape)
+import(sn)
+export(kern.den.circ,kern.reg.circ,nu.CV,nu.rt,nu.pi,nu.boot,nu.LSCV.reg,
+circsizer.density,circsizer.regression,dcircmix,rcircmix)
