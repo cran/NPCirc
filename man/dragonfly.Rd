@@ -18,10 +18,9 @@ Batschelet, E. (1981) \emph{Circular Statistics in Biology}. Academic Press, New
 }
 \examples{
 data(dragonfly)
-plot(circular(dragonfly), shrink=1.3)
-t <- seq(0,2*pi,length=500)
-dens <- kern.den.circ(dragonfly$orientation, t, nu=10)
-lines(circular(t), dens)
+x <- circular(dragonfly$orientation)
+dens <- kern.den.circ(x)
+plot(dens, shrink=1.3)
 }
 \keyword{datasets}
 

@@ -7,9 +7,9 @@ rcircmix<-function(n,model=NULL,dist=NULL,param=NULL){
 			if (length(dist)!=length(param[[i]])) stop ("Length of the objects of the list 'param' must be equal to the length of argument 'dist'")
 		}
 		if (sum(param[[1]])!=1){
-			warning ("Proportions must sum 1.  Equal proportions were used")
+			warning ("Proportions must sum 1. Proportions were normalized by the sum")
 			ndist<-length(dist)
-			param[[1]]<-rep(1/ndist,ndist)
+			param[[1]]<-param[[1]]/sum(param[[1]])
 		}
 	}
 	if (!is.null(model)){
@@ -99,9 +99,8 @@ rcircmix<-function(n,model=NULL,dist=NULL,param=NULL){
 		}else if (distribution=="wn"){
 			result[position] <- rwrappednormal(npos,mu=circular(param[[2]][j]),rho=param[[3]][j])
 		}else if (distribution=="wsn"){
-			result[position] <- rwsn(npos,xi=param[[2]][j],eta=param[[3]][j],lambda=param[[4]][j])
+			result[position] <- rwsn(npos,xi=circular(param[[2]][j]),eta=param[[3]][j],lambda=param[[4]][j])
 		}
 	}
-	return(result)
+	return(circular(result))
 }
-

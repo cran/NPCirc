@@ -1,10 +1,12 @@
-nu.rt<-function(x,robust=FALSE,alpha=0.5){
+bw.rt<-function(x,robust=FALSE,alpha=0.5){
+	x <- conversion.circular(x, units = "radians", zero = 0, rotation = "counter", modulo = "2pi")
+	attr(x, "class") <- attr(x, "circularp") <- NULL
 	if (!is.numeric(x)) stop("argument 'x' must be numeric")
-	x <- x[!is.na(x)]
+	x.na <- is.na(x)
+	if (sum(x.na)>0) warning("Missing values were removed")
+	x <- x[!x.na]
 	n <- length(x)
-	if (sum(is.na(x))>0) warning("Missing values were removed")
 	if (n==0) stop("No observations (at least after removing missing values)")
-	if (any(x<0) | any(x>2*pi)) stop("The sample of angles 'x' must be in radians between 0 and 2*pi")
 	if (robust){
 		if (!is.numeric(alpha)) stop("argument 'alpha' must be numeric")
 		if (alpha<0 | alpha>1){

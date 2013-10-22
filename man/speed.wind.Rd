@@ -24,44 +24,35 @@ There is no data in November 2005, December 2005, January 2006, February 2006, F
 December 2004, January 2007, December 2009 are not fully observed.
 }
 \source{
-Data can be freely downloaded from the Spanish Portuary Authority (http://www.puertos.es).
+Data can be freely downloaded from the Spanish Portuary Authority (\url{http://www.puertos.es}).
 }
-\references{ Oliveira, M., Crujeiras, R.M. and Rodríguez--Casal (2013) CircSiZer: an exploratory tool for circular data. http://arxiv.org/abs/1210.2555v2.
+\references{ 
+
+Oliveira, M., Crujeiras, R.M. and Rodríguez--Casal (2013) CircSiZer: an exploratory tool for circular data. \emph{Environmental and Ecological Statistics}, 
+DOI: 10.1007/s10651-013-0249-0.
 }
 \examples{
 data(speed.wind2)
 
-t <- seq(0,2*pi,length=500)
-dir <- rad(speed.wind2$Direction)
-
 # Density
-plot(circular(dir), stack=TRUE, zero=pi/2, rotation="clock", axes=FALSE)
-axis.circular(at=circular(seq(0,2*pi,by=pi/4)),
-labels=c("N","NE","E","SE","S","SW","W","NW","N"), zero=pi/2, rotation="clock")
-rose.diag(circular(dir), bins=16, add=TRUE, axes=FALSE, zero=pi/2, rotation="clock")
-
-rose.diag(circular(dir), bins=16, shrink=1.1, axes=FALSE, zero=pi/2, rotation="clock")
-axis.circular(at=circular(seq(0,7*pi/4,by=pi/4)),
-labels=c("N","NE","E","SE","S","SW","W","NW"), zero=pi/2, rotation="clock")
-lines(circular(t), kern.den.circ(dir,t,nu=1), lwd=2, lty=2, zero=pi/2, rotation="clock")
-lines(circular(t), kern.den.circ(dir,t,nu=10), lwd=2, lty=1, zero=pi/2, rotation="clock")
-lines(circular(t), kern.den.circ(dir,t,nu=60), lwd=2, lty=3, zero=pi/2, rotation="clock")
+dir <- circular(speed.wind2$Direction, units="degrees", template="geographics")
+plot(dir, stack=TRUE,  shrink= 1.1)
+rose.diag(dir, bins=16, add=TRUE)
+lines(kern.den.circ(dir,bw=1), lwd=2, col=2)
+lines(kern.den.circ(dir,bw=10), lwd=2, col=3)
+lines(kern.den.circ(dir,bw=40), lwd=2, col=4)
 
 # Regression
 vel <- speed.wind2$Speed
 nas <- which(is.na(vel))
 dir <- dir[-nas]
 vel <- vel[-nas]
-radial.plot(vel, dir, rp.type="s", start=pi/2, clockwise=TRUE, point.col="gray",
-radial.lim=c(0,15), label.pos=seq(0,7*pi/4,by=pi/4),
-labels=c("N","NE","E","SE","S","SW","W","NW"))
-radial.plot(as.numeric(kern.reg.circ(dir,vel,t,nu=1,method="LL")), t, rp.type="p",
-add=TRUE, start=pi/2, clockwise=TRUE, radial.lim=c(0,15), lwd=2, lty=2)
-radial.plot(as.numeric(kern.reg.circ(dir,vel,t,nu=10,method="LL")),t, rp.type="p",
-add=TRUE, start=pi/2, clockwise=TRUE, radial.lim=c(0,15), lwd=2, lty=1)
-radial.plot(as.numeric(kern.reg.circ(dir,vel,t,nu=60,method="LL")),t, rp.type="p",
-add=TRUE, start=pi/2, clockwise=TRUE, radial.lim=c(0,15), lwd=2, lty=3)
-
+res<-plot(kern.reg.circ.lin(dir, vel, bw=1, method="LL"), plot.type="circle", 
+points.plot=TRUE, line.col=2, lwd=2, main="")
+lines(kern.reg.circ.lin(dir, vel, bw=10, method="LL"), plot.type="circle", plot.info=res,
+line.col=3, lwd=2)
+lines(kern.reg.circ.lin(dir, vel, bw=40, method="LL"), plot.type="circle", plot.info=res, 
+line.col=4, lwd=2)
 }
 \keyword{datasets}
 

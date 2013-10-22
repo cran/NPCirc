@@ -13,7 +13,7 @@ dcircmix(x, model=NULL, dist=NULL, param=NULL)
 rcircmix(n, model=NULL, dist=NULL, param=NULL)
 }
 \arguments{
-  \item{x}{ Vector of angles in radians to compute the density.}
+  \item{x}{ Vector of angles where the density is evaluated. The object is coerced to class \code{\link{circular}}.}
   \item{n}{ Number of observations to generate.}
   \item{model}{ Number between 1 and 20, corresponding with a model defined in Oliveira et al. (2012). See Details.}
   \item{dist}{ Vector of strings with the distributions that participate in the mixture: \code{"unif"}, \code{"vm"}, \code{"car"}, \code{"wc"}, \code{"wn"}, 
@@ -55,9 +55,11 @@ M13: Mixture of three von Mises \eqn{2/5 vM(0.5,6) + 2/5 vM(3,6) + 1/5 vM(5,24)}
  
 M14: Mixture of four von Mises  \eqn{1/4 vM(0,12) + 1/4 vM(\pi/2,12) + 1/4 vM(\pi,12) + 1/4 vM(3\pi/2,12)}.
 
-M15: Mixture of wrapped Cauchy, wrapped normal, von Mises and wrapped skew-normal \eqn{3/10 WC(\pi-1,0.6) + 1/4 WN(\pi+0.5,0.9) + 1/4 vM(\pi+2,3) + 1/5 WSN(6,1,3)}.
+M15: Mixture of wrapped Cauchy, wrapped normal, von Mises and wrapped skew-normal 
+\eqn{3/10 WC(\pi-1,0.6) + 1/4 WN(\pi+0.5,0.9) + 1/4 vM(\pi+2,3) + 1/5 WSN(6,1,3)}.
 
-M16: Mixture of five von Mises \eqn{1/5 vM(\pi/5,18) + 1/5 vM(3\pi/5,18) + 1/5 vM(\pi,18) + 1/5 vM(7\pi/5,18) + 1/5 vM(9\pi/5,18)}.
+M16: Mixture of five von Mises \eqn{1/5 vM(\pi/5,18) + 1/5 vM(3\pi/5,18) + 1/5 vM(\pi,18) + 
+1/5 vM(7\pi/5,18) + 1/5 vM(9\pi/5,18)}.
 
 M17: Mixture of cardioid and wrapped Cauchy \eqn{2/3 C(\pi,0.5) + 1/3 WC(\pi,0.9)}.
 
@@ -86,35 +88,25 @@ the number of terms used is 20.
 
 \examples{
 set.seed(2012)
-# Linear representation of models M1-M20, each one in a separate window
+# Circular representation of models M1-M20, each one in a separate window
 for (i in 1:20){
 dev.new()
 f <- function(x) dcircmix(x, model=i)
-curve(f, from=0, to=2*pi, main=i)
+curve.circular(f, n=500, join=TRUE, shrink=1.9, main=i)
 }
 
-# Circular representation of model vM(0,1)
-vM <- function(x) dcircmix(x, model=NULL, dist="vm", param=list(p=1, mu=0, con=1))
-curve.circular(vM, n=1000, xlim=c(-1.65,1.65), main="vM(0,1)")
-# Random generation from a vM(0,1)
-datavM <- rcircmix(50, model=NULL, dist="vm", param=list(p=1, mu=0, con=1))
-points(circular(datavM))
-
-# Circular representation of model M18
-f18 <- function(x) dcircmix(x, model=18)
-curve.circular(f18, n=1000, xlim=c(-1.65,1.65), main="Model 18")
-# Random generation from model M8
-data18 <- rcircmix(50, model=18)
-points(circular(data18))
+# Random generation from model M1 (uniform model)
+data1 <- rcircmix(50, model=1)
+plot(data1)
 
 # Density function and random generation from a mixture of a von Mises and
 # a wrapped skew-normal
 f <- function(x) dcircmix(x, model=NULL, dist=c("vm","wsn"),
-param=list(p=c(0.5,0.5), mu=c(0,pi), con=c(1,1), sk=c(0,10), l=10))
-curve.circular(f, n=500, xlim=c(-1.65,1.65))
+param=list(p=c(0.5,0.5), mu=c(0,pi), con=c(1,1), sk=c(0,10)))
+curve.circular(f, n=500, shrink=1.2)
 data <- rcircmix(100, model=NULL, dist=c("vm","wsn"),
 param=list(p=c(0.5,0.5), mu=c(0,pi), con=c(1,1), sk=c(0,10)))
-points(circular(data))
+points(data)
 
 # Density function and random generation from a mixture of two von Mises and
 # two wrapped Cauchy
@@ -123,7 +115,7 @@ param=list(p=c(0.3,0.3,0.2,0.2), mu=c(0,pi,pi/2,3*pi/2), con=c(5,5,0.9,0.9)))
 curve.circular(f, n=1000, xlim=c(-1.65,1.65))
 data <- rcircmix(100, model=NULL, dist=c("vm","vm","wc","wc"),
 param=list(p=c(0.3,0.3,0.2,0.2), mu=c(0,pi,pi/2,3*pi/2), con=c(5,5,0.9,0.9)))
-points(circular(data))
+points(data)
 }
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the

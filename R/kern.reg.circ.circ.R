@@ -1,34 +1,19 @@
-kern.den.circ<-function(x,t=NULL,bw=NULL,from=circular(0),to=circular(2*pi),len=250){
+kern.reg.circ.circ<-function(x,y,t=NULL,bw=NULL,method="LL",from=circular(0),to=circular(2*pi),len=250){
 	name <- deparse(substitute(x))
-	data <- x
+	datax <- x
+	datay <- y
 	if (!is.numeric(x)) stop("argument 'x' must be numeric")
+	if (!is.numeric(y)) stop("argument 'y' must be numeric")
+	if (length(x) != length(y)) stop("'x' and 'y' must have the same number of observations")
 	if (!is.null(t) && is.circular(t)) {
 		datacircularp <- circularp(t)
-	} else if (is.circular(x)) {
+	} else if (is.circular(x)){
 		datacircularp <- circularp(x)
+	} else if (is.circular(y)){
+		datacircularp <- circularp(y)		
     	} else {
 		datacircularp <- list(type = "angles", units = "radians", template = "none", modulo = "2pi", zero = 0, rotation = "counter")
     	}
-	x <- conversion.circular(x, units = "radians", zero = 0, rotation = "counter", modulo = "2pi")
-	if (is.null(bw)){
-		bw<-bw.pi(x)		
-	}else{
-		if (is.numeric(bw)){
-			if (bw<0){
-				warning("Argument 'bw' must be positive. The value of 'bw' was computed by using the plug--in rule")
-				bw<-bw.pi(x)
-			}
-		}else{
- 			warning("argument 'bw' must be numeric. The value of 'bw' was computed by using the plug--in rule")
-			bw<-bw.pi(x)
-		}
-	}
-	attr(x, "class") <- attr(x, "circularp") <- NULL
-	x.na <- is.na(x)
-	if (sum(x.na)>0) warning("Missing values were removed")
-	x <- x[!x.na]
-	n <- length(x)
-	if (n==0) stop("No observations (at least after removing missing values)")
 	dc <- list()
       dc$type <- datacircularp$type
       dc$units <- datacircularp$units
@@ -55,11 +40,39 @@ kern.den.circ<-function(x,t=NULL,bw=NULL,from=circular(0),to=circular(2*pi),len=
 		t <- t[!t.na]
 		if (sum(t.na)>0) warning("'t' contains missing values. They were removed")
 	}
+	x <- conversion.circular(x, units = "radians", zero = 0, rotation = "counter", modulo = "2pi")
+	y <- conversion.circular(y, units = "radians", zero = 0, rotation = "counter", modulo = "2pi")
+	nax <- is.na(x)
+	nay <- is.na(y)
+	x<-x[!nax & !nay]
+	y<-y[!nax & !nay]
+	if ((sum(nax)+sum(nay))>0) warning("Missing values were removed.", "\n")
+	n <- length(x)
+	if (n==0) stop("No observations (at least after removing missing values)")
+	if (is.null(bw)){
+		bw <- bw.reg.circ.circ(x,y,method)		
+	}else{
+		if (is.numeric(bw)){
+			if (bw<0){
+				warning("Argument 'bw' must be positive. The value of 'bw' was computed by using the plug--in rule")
+				bw <- bw.reg.circ.circ(x,y,method)	
+			}
+		}else{
+ 			warning("Argument 'bw' must be numeric. The value of 'bw' was computed by using the plug--in rule")
+			bw <- bw.reg.circ.circ(x,y,method)	
+		}
+	}
+	attr(x, "class") <- attr(x, "circularp") <- NULL
+	attr(y, "class") <- attr(y, "circularp") <- NULL
 	tt <- conversion.circular(t, dc$units, dc$type, dc$template, dc$modulo, dc$zero, dc$rotation)
 	t <- conversion.circular(t, units = "radians", modulo="2pi", zero = 0, rotation = "counter")
 	attr(t, "class") <- attr(t, "circularp") <- NULL
-	y <- DensCircRad(x, t, bw)
-	structure(list(data = data, x = tt, y = y, bw = bw, n = n, kernel = "vonmises", 
-	call = match.call(), data.name = name, has.na = FALSE), class = "density.circular")
+	if (method=="NW") fhat <- RegCircCirc(x, y, t, bw, method="NW")
+	else fhat <- RegCircCirc(x, y, t, bw, method="LL")
+	fhat <- conversion.circular(circular(fhat), dc$units, dc$type, dc$template, dc$modulo, dc$zero, dc$rotation)
+	structure(list(datax = datax, datay = datay, x = tt, y = fhat, bw = bw, n = n, kernel = "vonmises", 
+	call = match.call(), data.name = name, has.na = FALSE), class = "regression.circular")
 }
+
+
 

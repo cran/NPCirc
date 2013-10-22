@@ -24,21 +24,12 @@ of Education and Science.
 }
 \examples{
 data(cycle.changes)
-
 thaw <- (cycle.changes[,1]==1)
 frosting <- (cycle.changes[,1]==-1)
-
-plot(circular(cycle.changes[frosting,2]), shrink=1.08, col=4, stack=TRUE, zero=pi/2,
-rotation="clock", axes=FALSE, main="Frosting")
-axis.circular(at=circular(seq(0, 7/4*pi, pi/4)), 
-labels=c("0h","3h","6h","9h","12h","15h","18h","21h"),
-zero=pi/2, rotation="clock")
-
-plot(circular(cycle.changes[thaw,2]), shrink=1.08, col=2, stack=TRUE, zero=pi/2,
-rotation="clock", axes=FALSE, main="Thaw")
-axis.circular(at=circular(seq(0, 7/4*pi, pi/4)), 
-labels=c("0h","3h","6h","9h","12h","15h","18h","21h"),
-zero=pi/2, rotation="clock")
+plot(circular(cycle.changes[frosting,2],template="clock24"), shrink=1.08, col=4, 
+stack=TRUE, main="Frosting")
+plot(circular(cycle.changes[thaw,2],template="clock24"), shrink=1.08, col=2, 
+stack=TRUE, main="Thaw")
 }
 \keyword{datasets}
 

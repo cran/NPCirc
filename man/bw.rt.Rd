@@ -1,6 +1,6 @@
 \encoding{latin1}
-\name{nu.rt}
-\alias{nu.rt}
+\name{bw.rt}
+\alias{bw.rt}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{ Rule of thumb }
 \description{
@@ -8,10 +8,10 @@
    Mises distribution. The concentration parameter can be estimated by maximum likelihood or by a robustified procedure as described in Oliveira et al. (2013). 
 }
 \usage{
-nu.rt(x, robust=FALSE, alpha=0.5)
+bw.rt(x, robust=FALSE, alpha=0.5)
 }
 \arguments{
-  \item{x}{ Sample of angles in radians (between \eqn{0} and \eqn{2\pi}) from which the smoothing parameter is to be computed.}
+  \item{x}{ Data from which the smoothing parameter is to be computed. The object is coerced to class \code{\link{circular}}.}
   \item{robust}{ Logical, if \code{robust=FALSE} the parameter \eqn{\kappa} is estimated by maximum likelihood, if \code{TRUE} it is estimated
 		as described in Oliveira et al. (2012b). Default \code{robust=FALSE}.}
   \item{alpha}{ Arc probability when \code{robust=TRUE}. Default is \code{alpha=0.5}. See Details.}
@@ -42,14 +42,14 @@ Taylor, C.C. (2008) Automatic bandwidth selection for circular density estimatio
 
 \author{ María Oliveira, Rosa M. Crujeiras and Alberto Rodríguez--Casal}
 
-\seealso{\code{\link{kern.den.circ}}, \code{\link{nu.CV}}, \code{\link{nu.pi}}, \code{\link{nu.boot}} }
+\seealso{\code{\link{kern.den.circ}}, \code{\link{bw.CV}}, \code{\link{bw.pi}}, \code{\link{bw.boot}} }
 
 \examples{
 set.seed(2012)
 n <- 100
 x <- rcircmix(n,model=7)
-nu.rt(x) 
-nu.rt(x, robust=TRUE)
+bw.rt(x) 
+bw.rt(x, robust=TRUE)
 }
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the

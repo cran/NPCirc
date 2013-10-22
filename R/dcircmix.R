@@ -1,9 +1,11 @@
 dcircmix<-function(x,model=NULL,dist=NULL,param=NULL){
+	x <- conversion.circular(x, units = "radians", zero = 0, rotation = "counter")
 	if (!is.numeric(x)) stop("argument 'x' must be numeric")
 	if (is.null(model) & is.null(dist)) stop("No model specified")
-	x <- x[!is.na(x)]
+	x.na <- is.na(x)
+	x <- x[!x.na]
 	n <- length(x)
-	if (sum(is.na(x))>0) warning("Missing values were removed")
+	if (sum(x.na)>0) warning("Missing values were removed")
 	if (n==0) stop("No observations (at least after removing missing values)")
 	if (!is.null(dist)){
 		nobj <- length(param)
@@ -17,12 +19,11 @@ dcircmix<-function(x,model=NULL,dist=NULL,param=NULL){
 			}
 		}
 		if (sum(param[[1]])!=1){
-			warning ("Proportions must sum 1.  Equal proportions were used")
+			warning ("Proportions must sum 1. Proportions were normalized by the sum")
 			ndist<-length(dist)
-			param[[1]]<-rep(1/ndist,ndist)
+			param[[1]]<-param[[1]]/sum(param[[1]])
 		}
 	}
-	x<-circular(x)
 	if (!is.null(model)){
 		if (!is.numeric(model)) stop("argument 'model' must be numeric")
 		if (!any(model==1:20)) stop("Value specified for argument 'model' is not valid")
@@ -102,9 +103,7 @@ dcircmix<-function(x,model=NULL,dist=NULL,param=NULL){
 		}else if (distribution=="wn"){
 			mix <- mix + param[[1]][i]*dwrappednormal(x,mu=circular(param[[2]][i]),rho=param[[3]][i])
 		}else if (distribution=="wsn"){
-			if (length(param)==5) l=param[[5]]
-			else l=20
-			mix <- mix + param[[1]][i]*dwsn(x,xi=param[[2]][i],eta=param[[3]][i],lambda=param[[4]][i],l=l)
+			mix <- mix + param[[1]][i]*dwsn(x,xi=circular(param[[2]][i]),eta=param[[3]][i],lambda=param[[4]][i])
 		}
 	}
 	return(mix)

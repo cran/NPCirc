@@ -1,6 +1,6 @@
 \encoding{latin1}
-\name{nu.pi}
-\alias{nu.pi}
+\name{bw.pi}
+\alias{bw.pi}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{ Plug--in rule }
 \description{
@@ -8,10 +8,10 @@
   is selected by Akaike Information Criterion (AIC) which selects the best model between a mixture of 2-5 von Mises distributions.
 }
 \usage{
-nu.pi(x, M=NULL, lower=0, upper=100, np=500, tol=0.1, outM=FALSE)
+bw.pi(x, M=NULL, lower=0, upper=100, np=500, tol=0.1, outM=FALSE)
 }
 \arguments{
-  \item{x}{ Sample of angles in radians (between \eqn{0} and \eqn{2\pi}) from which the smoothing parameter is to be computed.}
+  \item{x}{ Data from which the smoothing parameter is to be computed. The object is coerced to class \code{\link{circular}}.}
   \item{M}{ Integer indicating the number of components in the mixture. If \code{M=1}, the rule of thumb is carried out with \eqn{\kappa} estimated by
             maximum likelihood. If \code{M=NULL}, AIC will be used.}
   \item{lower, upper}{ \code{lower} and \code{upper} boundary of the interval to be used in the search for the value of the smoothing parameter. Default
@@ -22,7 +22,7 @@ nu.pi(x, M=NULL, lower=0, upper=100, np=500, tol=0.1, outM=FALSE)
 }
 \details{
   The value of the smoothing parameter is chosen by minimizing the asymptotic mean integrated squared error (AMISE) derived by Di Marzio et al. (2009) 
-  assuming that the data follow a mixture of von Mises distributions. The number of componentes in the mixture can be fixed by the user, by specifying
+  assuming that the data follow a mixture of von Mises distributions. The number of components in the mixture can be fixed by the user, by specifying
   the argument \code{M} or selected by using AIC (default option) as described in Oliveira et al. (2012).
   The NAs will be automatically removed.
 }
@@ -36,14 +36,14 @@ nu.pi(x, M=NULL, lower=0, upper=100, np=500, tol=0.1, outM=FALSE)
 
 \author{ María Oliveira, Rosa M. Crujeiras and Alberto Rodríguez--Casal}
 
-\seealso{\code{\link{kern.den.circ}}, \code{\link{nu.rt}}, \code{\link{nu.CV}}, \code{\link{nu.boot}} }
+\seealso{\code{\link{kern.den.circ}}, \code{\link{bw.rt}}, \code{\link{bw.CV}}, \code{\link{bw.boot}} }
 
 \examples{
 set.seed(2012)
 n <- 100
 x <- rcircmix(n,model=18)
-nu.pi(x, M=3)
-nu.pi(x, outM=TRUE)  # Using AIC
+bw.pi(x, M=3)
+bw.pi(x, outM=TRUE)  # Using AIC
 }
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the

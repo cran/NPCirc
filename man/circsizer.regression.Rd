@@ -8,47 +8,54 @@
    CircSiZer is an extension of SiZer proposed by Chaudhuri and Marron (1999) to circular data.
 }
 \usage{
-circsizer.regression(x, y, NU, ngrid=150, alpha=0.05, B=500, B2=250, type=3, 
-log.scale=TRUE, zero=pi/2, clockwise=TRUE, title=NULL, labels=NULL, 
-label.pos=NULL, rad.pos=NULL)
+circsizer.regression(x, y, bws=NULL, adjust=2, ngrid=150, alpha=0.05, B=500, 
+B2=250, log.scale=TRUE, display=TRUE)
 }
 \arguments{
-  \item{x}{ Sample of angles in radians (between \eqn{0} and \eqn{2\pi}) for the circular covariate.}
-  \item{y}{ Sample of angles for the dependent linear variable. This must be same length as \code{x}.}
-  \item{NU}{ Vector of smoothing parameters. Values of \code{NU} must be positive. \code{NU} will be coerced to be equally spaced. Length of vector \code{NU}
+  \item{x}{ Vector of data for the independent variable. The object is coerced to class \code{\link{circular}}.}
+  \item{y}{ Vector of data for the dependent variable. This must be same length as \code{x}.}
+  \item{bws}{ Vector of smoothing parameters. Values of \code{bws} must be positive. \code{bws} will be coerced to be equally spaced. Length of vector \code{bws}
 	     must be at least 2.}
+  \item{adjust}{ If \code{bws=NULL}, the smoothing parameters used are \code{adjust/bw} and \code{adjust*bw}, where \code{bw} is the smoothing parameter obtained 
+                by using the cross--validation rule.}
   \item{ngrid}{ Integer indicating the number of equally spaced angles between \eqn{0} and \eqn{2\pi} where the estimator is evaluated. Default 
                 \code{ngrid=150}.}
   \item{alpha}{ Significance level for the CircSiZer map. Default \code{alpha=0.05}.}
   \item{B}{ Integer indicating the number of bootstrap samples to estimate the standard deviation of the derivative estimator. Default \code{B=500}.}
   \item{B2}{ Integer indicating the number of bootstrap samples to compute the denominator in Step 2 of algorithm described in Oliveira et al. (2013). 
              Default \code{B=250}.}
-  \item{type}{ Number indicating the labels to display in the plot: 1 (directions), 2 (hours), 3 (angles in radians), 4 (angles in degrees) or 5 (months). 
-               Default \code{type=3}.}
-  \item{log.scale}{ Logical, if \code{TRUE}, the CircSiZer map is plotted in the scale \eqn{-log_{10}(NU)}. Default is \code{TRUE}.}
-  \item{zero}{ Where to place the starting (zero) point. Defaults to the North position.}
-  \item{clockwise}{ Whether to interpret positive positions as clockwise from the starting point. The default is clockwise (\code{clockwise=TRUE}).}
-  \item{title}{ Title for the plot.}
-  \item{labels}{ Character or expression vector of labels to be placed at the \code{label.pos}. \code{label.pos} must also be supplied.}
-  \item{label.pos}{ Vector indicating the position (between \eqn{0} and \eqn{2\pi}) at which the labels are to be drawn.}
-  \item{rad.pos}{ Vector (between \eqn{0} and \eqn{2\pi}) with the drawing position for the radius.}
+  \item{log.scale}{ Logical, if \code{TRUE}, the CircSiZer map is plotted in the scale \eqn{-\log_{10}(\code{bws})}. Default is \code{TRUE}.}
+  \item{display}{ Logical, if \code{TRUE}, the CircSiZer map is plotted. Default is \code{TRUE}.}
 }
 \details{
   See Details Section of \code{\link{circsizer.density}}.
   The NAs will be automatically removed.
 }
 \value{
-  CircSiZer map for regression.
+An object with class \code{circsizer} whose underlying structure is a list containing the following components. 
+
+\item{data}{ Original dataset.}
+\item{ngrid}{ Number of equally spaced angles where the derivative of the regression estimator is evaluated.}
+\item{bw}{ Vector of smoothing parameters (given in \eqn{-\log_{10}} scale if \code{log.scale=TRUE}).}
+\item{log.scale}{ Logical; if \code{TRUE}, the \eqn{-\log_{10}} scale is used for constructing the CircSiZer map.}
+\item{CI}{ List containing: a matrix with lower limits fot the confidence intervals; a matrix with the lower limits of the confidence intervals; a matrix 
+with the Effective Sample Size. Each row corresponds to each value of the smoothing parameter and each column corresponds to an angle.}
+\item{col}{ Matrix containing the colors for plotting the CircSiZer map.}
+
+If \code{display==TRUE}, the function also returns the CircSiZer map for regression.
 }
 \references{
 Chaudhuri, P. and Marron, J.S. (1999). SiZer for exploration of structures in curves, \emph{Journal of the American Statistical Association}, \bold{94}, 
 807--823.
 
-Oliveira, M., Crujeiras, R.M. and Rodríguez--Casal (2013) CircSiZer: an exploratory tool for circular data. http://arxiv.org/abs/1210.2555v2.
+Oliveira, M., Crujeiras, R.M. and Rodríguez--Casal (2013) CircSiZer: an exploratory tool for circular data. \emph{Environmental and Ecological Statistics}, 
+DOI: 10.1007/s10651-013-0249-0.
 }
 
 
 \author{ María Oliveira, Rosa M. Crujeiras and Alberto Rodríguez--Casal}
+
+\seealso{\code{\link{circsizer.map}} }
 
 \examples{
 # Not run: the code works but it is slow
@@ -56,7 +63,7 @@ Oliveira, M., Crujeiras, R.M. and Rodríguez--Casal (2013) CircSiZer: an explorat
 # n <- 100
 # x <- seq(0,2*pi,length=n)
 # y <- sin(x)+sqrt(0.5)*rnorm(n)
-# circsizer.regression(x, y, NU=seq(10,60,by=5), title="CircSiZer for regression")
+# circsizer.regression(circular(x), y, bws=seq(10,60,by=5))
 }
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the

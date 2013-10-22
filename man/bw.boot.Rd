@@ -1,6 +1,6 @@
 \encoding{latin1}
-\name{nu.boot}
-\alias{nu.boot}
+\name{bw.boot}
+\alias{bw.boot}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{ Bootstrap method }
 \description{
@@ -8,10 +8,10 @@
   the von Mises density as kernel.
 }
 \usage{
-nu.boot(x, lower=0, upper=100, np=500, tol=0.1)
+bw.boot(x, lower=0, upper=100, np=500, tol=0.1)
 }
 \arguments{
-  \item{x}{ Sample of angles in radians (between \eqn{0} and \eqn{2\pi}) from which the smoothing parameter is to be computed.}
+  \item{x}{ Data from which the smoothing parameter is to be computed. The object is coerced to class \code{\link{circular}}.}
   \item{lower, upper}{ \code{lower} and \code{upper} boundary of the interval to be used in the search for the value of the smoothing parameter. Default
                        \code{lower=0} and \code{upper=100}.}
   \item{np}{ Number of points where to evaluate the estimator for numerical integration. Default \code{np=500}.}
@@ -32,7 +32,7 @@ Oliveira, M., Crujeiras, R.M. and Rodríguez--Casal, A. (2012) A plug--in rule fo
 Taylor, C.C. (1989) Bootstrap choice of the smoothing parameter in kernel density estimation. \emph{Biometrika}, \bold{76}, 705--712.
 }
 
-\seealso{\code{\link{kern.den.circ}}, \code{\link{nu.rt}}, \code{\link{nu.CV}}, \code{\link{nu.pi}} }
+\seealso{\code{\link{kern.den.circ}}, \code{\link{bw.rt}}, \code{\link{bw.CV}}, \code{\link{bw.pi}} }
 
 \author{ María Oliveira, Rosa M. Crujeiras and Alberto Rodríguez--Casal}
 
@@ -40,7 +40,7 @@ Taylor, C.C. (1989) Bootstrap choice of the smoothing parameter in kernel densit
 set.seed(2012)
 n <- 100
 x <- rcircmix(n, model=17)
-nu.boot(x, lower=0, upper=20)
+bw.boot(x, lower=0, upper=20)
 }
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the
