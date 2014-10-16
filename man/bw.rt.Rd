@@ -38,6 +38,9 @@ Oliveira, M., Crujeiras R.M. and Rodríguez--Casal, A. (2013) Nonparametric circu
 \emph{Environmental and Ecological Statistics}, \bold{20}, 1--17.
 
 Taylor, C.C. (2008) Automatic bandwidth selection for circular density estimation. \emph{Computational Statistics and Data Analysis}, \bold{52}, 3493--3500.
+
+Oliveira, M., Crujeiras R.M. and Rodríguez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software}, 
+\bold{61}(9), 1--26. \url{http://www.jstatsoft.org/v61/i09/}
 }
 
 \author{ María Oliveira, Rosa M. Crujeiras and Alberto Rodríguez--Casal}

@@ -35,6 +35,9 @@ and Data Analysis}, \bold{56}, 3898--3908.
 
 Oliveira, M., Crujeiras R.M. and Rodríguez--Casal, A. (2013) Nonparametric circular methods for exploring environmental data. 
 \emph{Environmental and Ecological Statistics}, \bold{20}, 1--17.
+
+Oliveira, M., Crujeiras R.M. and Rodríguez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software}, 
+\bold{61}(9), 1--26. \url{http://www.jstatsoft.org/v61/i09/}
 }
 
 \seealso{\code{\link{kern.den.circ}}, \code{\link{bw.rt}}, \code{\link{bw.pi}}, \code{\link{bw.boot}} }

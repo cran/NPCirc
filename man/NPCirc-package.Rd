@@ -13,8 +13,8 @@ This package implements nonparametric kernel methods for density and regression 
 \tabular{ll}{
 Package: \tab NPCirc\cr
 Type: \tab Package\cr
-Version: \tab 2.0.0\cr
-Date: \tab 2013-10-18\cr
+Version: \tab 2.0.1\cr
+Date: \tab 2014-10-16\cr
 License: \tab GPL-2\cr
 LazyLoad: \tab yes\cr
 }
@@ -42,8 +42,11 @@ and Data Analysis}, \bold{56}, 3898--3908.
 Oliveira, M., Crujeiras R.M. and Rodríguez--Casal, A. (2013) Nonparametric circular methods for exploring environmental data. 
 \emph{Environmental and Ecological Statistics}, \bold{20}, 1--17.
 
-Oliveira, M., Crujeiras, R.M. and Rodríguez--Casal (2013) CircSiZer: an exploratory tool for circular data. \emph{Environmental and Ecological Statistics}, 
-DOI: 10.1007/s10651-013-0249-0..
+Oliveira, M., Crujeiras, R.M. and Rodríguez--Casal (2014) CircSiZer: an exploratory tool for circular data. \emph{Environmental and Ecological Statistics}, 
+\bold{21}, 143--159.
+
+Oliveira, M., Crujeiras R.M. and Rodríguez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software}, 
+\bold{61}(9), 1--26. \url{http://www.jstatsoft.org/v61/i09/}
 }
 
 

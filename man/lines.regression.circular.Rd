@@ -30,6 +30,11 @@ clockwise=NULL, radial.lim=NULL, plot.info=NULL, ...)
 	      and \code{x} is the output of \code{\link{kern.reg.circ.circ}}).}
 }
 
+\references{ 
+Oliveira, M., Crujeiras R.M. and Rodríguez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software}, 
+\bold{61}(9), 1--26. \url{http://www.jstatsoft.org/v61/i09/}
+}
+
 \author{ María Oliveira, Rosa M. Crujeiras and Alberto Rodríguez--Casal}
 
 \seealso{\code{\link{kern.reg.circ.lin}}, \code{\link{kern.reg.circ.circ}}, \code{\link{kern.reg.lin.circ}}, \code{\link{plot.regression.circular}}}

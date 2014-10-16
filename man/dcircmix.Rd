@@ -81,6 +81,9 @@ the number of terms used is 20.
 }
 
 \references{Oliveira, M., Crujeiras, R.M. and Rodríguez--Casal, A. (2012) A plug--in rule for bandwidth selection in circular density. \emph{Computational Statistics and Data Analysis}, \bold{56}, 3898--3908.
+
+Oliveira, M., Crujeiras R.M. and Rodríguez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software}, 
+\bold{61}(9), 1--26. \url{http://www.jstatsoft.org/v61/i09/}
 }
 
 \author{ María Oliveira, Rosa M. Crujeiras and Alberto Rodríguez--Casal}

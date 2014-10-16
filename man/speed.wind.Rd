@@ -28,8 +28,8 @@ Data can be freely downloaded from the Spanish Portuary Authority (\url{http://w
 }
 \references{ 
 
-Oliveira, M., Crujeiras, R.M. and Rodríguez--Casal (2013) CircSiZer: an exploratory tool for circular data. \emph{Environmental and Ecological Statistics}, 
-DOI: 10.1007/s10651-013-0249-0.
+Oliveira, M., Crujeiras, R.M. and Rodríguez--Casal (2014) CircSiZer: an exploratory tool for circular data. \emph{Environmental and Ecological Statistics}, 
+\bold{21}, 143--159.
 }
 \examples{
 data(speed.wind2)

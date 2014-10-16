@@ -28,13 +28,10 @@ label.pos=NULL, rad.pos=NULL, raw.data=FALSE)
   CircSiZer map.
 }
 
-%\references{ 
-%Chaudhuri, P. and Marron, J.S. (1999). SiZer for exploration of structures in curves, \emph{Journal of the American Statistical Association}, \bold{94}, 
-%807--823.
-%
-%Oliveira, M., Crujeiras, R.M. and Rodríguez--Casal (2013) CircSiZer: an exploratory tool for circular data. \emph{Environmental and Ecological Statistics}, 
-%DOI: 10.1007/s10651-013-0249-0.
-%}
+\references{ 
+Oliveira, M., Crujeiras R.M. and Rodríguez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software}, 
+\bold{61}(9), 1--26. \url{http://www.jstatsoft.org/v61/i09/}
+}
 
 \author{ María Oliveira, Rosa M. Crujeiras and Alberto Rodríguez--Casal}
 

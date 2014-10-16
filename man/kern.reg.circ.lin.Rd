@@ -63,6 +63,9 @@ Di Marzio, M., Panzera A. and Taylor, C. C. (2012) Non--parametric regression fo
 
 Oliveira, M., Crujeiras R.M. and Rodríguez--Casal, A. (2013) Nonparametric circular methods for exploring environmental data. 
 \emph{Environmental and Ecological Statistics}, \bold{20}, 1--17.
+
+Oliveira, M., Crujeiras R.M. and Rodríguez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software}, 
+\bold{61}(9), 1--26. \url{http://www.jstatsoft.org/v61/i09/}
 }
 
 \author{ María Oliveira, Rosa M. Crujeiras and Alberto Rodríguez--Casal}
