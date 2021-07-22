@@ -10,7 +10,7 @@ citEntry(entry = "Article",
   volume       = "61",
   number       = "9",
   pages        = "1--26",
-  url          = "http://www.jstatsoft.org/v61/i09/",
+  url          = "https://www.jstatsoft.org/v61/i09/",
 
   textVersion  =
   paste("Maria Oliveira, Rosa M. Crujeiras, Alberto Rodriguez-Casal (2014).",

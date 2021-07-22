@@ -5,10 +5,16 @@ importFrom(movMF, movMF)
 importFrom(plotrix, boxed.labels, radial.plot) 
 importFrom(rgl, lines3d, points3d, texts3d)
 importFrom(shape, Arrows)
+importFrom("graphics", "hist.default", "lines.default", "par", "plot.default", 
+			"points", "points.default", "segments", "text")
+importFrom("stats", "dist", "dnorm", "optimize", "pchisq", "pnorm",
+            "quantile", "rnorm", "runif", "uniroot")
 export(kern.den.circ,kern.reg.circ.lin,kern.reg.circ.circ,kern.reg.lin.circ,bw.CV,bw.rt,bw.pi,
 bw.boot,bw.reg.circ.lin,bw.reg.circ.circ,bw.reg.lin.circ,
-dcircmix,rcircmix,dwsn,rwsn,circsizer.density,circsizer.regression,circsizer.map)
+dcircmix,rcircmix,dwsn,rwsn,circsizer.density,circsizer.regression,circsizer.map,ancova.circ.lin,
+ancova.lin.circ,ancova.circ.circ,noeffect.circ.lin,noeffect.lin.circ,noeffect.circ.circ)
 S3method(plot, regression.circular)
 S3method(lines, regression.circular)
 S3method(print, regression.circular)
 S3method(print, circsizer)
+

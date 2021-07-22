@@ -4,7 +4,7 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{ Bootstrap method }
 \description{
-  This function implements the bootstrap procedure proposed by Di Marzio et al. (2011) for selecting the smoothing parameter for density estimation taking 
+  This function implements the bootstrap procedure proposed by Di Marzio et al. (2011) for selecting the smoothing parameter for density estimation taking
   the von Mises density as kernel.
 }
 \usage{
@@ -24,20 +24,20 @@ bw.boot(x, lower=0, upper=100, np=500, tol=0.1)
 \value{
   Value of the smoothing parameter.
 }
-\references{ 
+\references{
 Di Marzio, M., Panzera A. and Taylor, C.C. (2011) Kernel density estimation on the torus. \emph{Journal of Statistical Planning and Inference}, \bold{141}, 2156--2173.
 
-Oliveira, M., Crujeiras, R.M. and Rodríguez--Casal, A. (2012) A plug--in rule for bandwidth selection in circular density. \emph{Computational Statistics and Data Analysis}, \bold{56}, 3898--3908.
+Oliveira, M., Crujeiras, R.M. and Rodr?guez--Casal, A. (2012) A plug--in rule for bandwidth selection in circular density. \emph{Computational Statistics and Data Analysis}, \bold{56}, 3898--3908.
 
 Taylor, C.C. (1989) Bootstrap choice of the smoothing parameter in kernel density estimation. \emph{Biometrika}, \bold{76}, 705--712.
 
-Oliveira, M., Crujeiras R.M. and Rodríguez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software}, 
-\bold{61}(9), 1--26. \url{http://www.jstatsoft.org/v61/i09/}
+Oliveira, M., Crujeiras R.M. and Rodr?guez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software},
+\bold{61}(9), 1--26. \url{https://www.jstatsoft.org/v61/i09/}
 }
 
 \seealso{\code{\link{kern.den.circ}}, \code{\link{bw.rt}}, \code{\link{bw.CV}}, \code{\link{bw.pi}} }
 
-\author{ María Oliveira, Rosa M. Crujeiras and Alberto Rodríguez--Casal}
+\author{ Mar?a Oliveira, Rosa M. Crujeiras and Alberto Rodr?guez--Casal}
 
 \examples{
 set.seed(2012)

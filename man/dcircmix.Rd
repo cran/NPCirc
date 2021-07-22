@@ -5,8 +5,8 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{ Mixtures of circular distributions }
 \description{
-   Density and random generation functions for a circular distribution or a mixture of circular distributions allowing the following components: circular 
-   uniform, von Mises, cardioid, wrapped Cauchy, wrapped normal, wrapped skew-normal. 
+   Density and random generation functions for a circular distribution or a mixture of circular distributions allowing the following components: circular
+   uniform, von Mises, cardioid, wrapped Cauchy, wrapped normal, wrapped skew-normal.
 }
 \usage{
 dcircmix(x, model=NULL, dist=NULL, param=NULL)
@@ -16,12 +16,12 @@ rcircmix(n, model=NULL, dist=NULL, param=NULL)
   \item{x}{ Vector of angles where the density is evaluated. The object is coerced to class \code{\link{circular}}.}
   \item{n}{ Number of observations to generate.}
   \item{model}{ Number between 1 and 20, corresponding with a model defined in Oliveira et al. (2012). See Details.}
-  \item{dist}{ Vector of strings with the distributions that participate in the mixture: \code{"unif"}, \code{"vm"}, \code{"car"}, \code{"wc"}, \code{"wn"}, 
+  \item{dist}{ Vector of strings with the distributions that participate in the mixture: \code{"unif"}, \code{"vm"}, \code{"car"}, \code{"wc"}, \code{"wn"},
 		\code{"wsn"}.}
-  \item{param}{ List with three or four objects. The first object will be a vector containing the proportion of each distribution in the mixture, 
+  \item{param}{ List with three or four objects. The first object will be a vector containing the proportion of each distribution in the mixture,
 	        the second object will be a vector containg the location parameters and the third object will be a vector containing the concentration
 		parameters. If the wrapped skew-normal distribution participates in the mixture, a fourth object will be introduced in the list, a vector
-                containing the skewness parameter. In this case, the values of the skewness parameter for the rest of distributions in the mixture will be 
+                containing the skewness parameter. In this case, the values of the skewness parameter for the rest of distributions in the mixture will be
 	        zero. The length of each object in the list must be equal to the length of argument \code{dist}. See Details and Examples.}
 }
 \details{
@@ -52,13 +52,13 @@ M11: Mixture of three von Mises \eqn{1/3 vM(\pi/3,6) + 1/3 vM(\pi,6) + 1/3 vM(5\
 M12: Mixture of three von Mises \eqn{2/5 vM(\pi/2,4) + 1/5 vM(\pi,5) + 2/5 vM(3\pi/2,4)}.
 
 M13: Mixture of three von Mises \eqn{2/5 vM(0.5,6) + 2/5 vM(3,6) + 1/5 vM(5,24)}.
- 
+
 M14: Mixture of four von Mises  \eqn{1/4 vM(0,12) + 1/4 vM(\pi/2,12) + 1/4 vM(\pi,12) + 1/4 vM(3\pi/2,12)}.
 
-M15: Mixture of wrapped Cauchy, wrapped normal, von Mises and wrapped skew-normal 
+M15: Mixture of wrapped Cauchy, wrapped normal, von Mises and wrapped skew-normal
 \eqn{3/10 WC(\pi-1,0.6) + 1/4 WN(\pi+0.5,0.9) + 1/4 vM(\pi+2,3) + 1/5 WSN(6,1,3)}.
 
-M16: Mixture of five von Mises \eqn{1/5 vM(\pi/5,18) + 1/5 vM(3\pi/5,18) + 1/5 vM(\pi,18) + 
+M16: Mixture of five von Mises \eqn{1/5 vM(\pi/5,18) + 1/5 vM(3\pi/5,18) + 1/5 vM(\pi,18) +
 1/5 vM(7\pi/5,18) + 1/5 vM(9\pi/5,18)}.
 
 M17: Mixture of cardioid and wrapped Cauchy \eqn{2/3 C(\pi,0.5) + 1/3 WC(\pi,0.9)}.
@@ -70,23 +70,23 @@ M19: Mixture of five von Mises \eqn{4/9 vM(2,3) + 5/36 vM(4,3) + 5/36 vM(3.5,50)
 M20: Mixture of two wrapped skew-normal and two wrapped Cauchy \eqn{1/3 WSN(0,0.7,20) + 1/3 WSN(\pi,0.7,20) + 1/6 WC(3\pi/4,0.9) + 1/6 WC(7\pi/4,0.9)}.
 
 
-When the wrapped skew-normal distribution participates in the mixture, the argument \code{param} for function \code{dcircmix} can be a list with fifth 
+When the wrapped skew-normal distribution participates in the mixture, the argument \code{param} for function \code{dcircmix} can be a list with fifth
 objects. The fifth object would be the number of terms to be used in approximating the density function of the wrapped skew normal distribution. By default
 the number of terms used is 20.
 
 }
 
 \value{
-\code{dcircmix} gives the density and \code{rcircmix} generates random deviates. 
+\code{dcircmix} gives the density and \code{rcircmix} generates random deviates.
 }
 
-\references{Oliveira, M., Crujeiras, R.M. and Rodríguez--Casal, A. (2012) A plug--in rule for bandwidth selection in circular density. \emph{Computational Statistics and Data Analysis}, \bold{56}, 3898--3908.
+\references{Oliveira, M., Crujeiras, R.M. and Rodr?guez--Casal, A. (2012) A plug--in rule for bandwidth selection in circular density. \emph{Computational Statistics and Data Analysis}, \bold{56}, 3898--3908.
 
-Oliveira, M., Crujeiras R.M. and Rodríguez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software}, 
-\bold{61}(9), 1--26. \url{http://www.jstatsoft.org/v61/i09/}
+Oliveira, M., Crujeiras R.M. and Rodr?guez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software},
+\bold{61}(9), 1--26. \url{https://www.jstatsoft.org/v61/i09/}
 }
 
-\author{ María Oliveira, Rosa M. Crujeiras and Alberto Rodríguez--Casal}
+\author{ Mar?a Oliveira, Rosa M. Crujeiras and Alberto Rodr?guez--Casal}
 
 
 \examples{

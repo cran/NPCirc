@@ -4,7 +4,7 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{ Plug--in rule }
 \description{
-  This function implements the von Mises scale plug-in rule for the smoothing parameter for density estimation when the number of components in the mixture 
+  This function implements the von Mises scale plug-in rule for the smoothing parameter for density estimation when the number of components in the mixture
   is selected by Akaike Information Criterion (AIC) which selects the best model between a mixture of 2-5 von Mises distributions.
 }
 \usage{
@@ -21,7 +21,7 @@ bw.pi(x, M=NULL, lower=0, upper=100, np=500, tol=0.1, outM=FALSE)
   \item{outM}{ Logical; if \code{TRUE} the function also returns the number of components in the mixture. Default, \code{outM=FALSE}.}
 }
 \details{
-  The value of the smoothing parameter is chosen by minimizing the asymptotic mean integrated squared error (AMISE) derived by Di Marzio et al. (2009) 
+  The value of the smoothing parameter is chosen by minimizing the asymptotic mean integrated squared error (AMISE) derived by Di Marzio et al. (2009)
   assuming that the data follow a mixture of von Mises distributions. The number of components in the mixture can be fixed by the user, by specifying
   the argument \code{M} or selected by using AIC (default option) as described in Oliveira et al. (2012).
   The NAs will be automatically removed.
@@ -30,14 +30,14 @@ bw.pi(x, M=NULL, lower=0, upper=100, np=500, tol=0.1, outM=FALSE)
   Vector with the value of the smoothing parameter and the number of components in the mixture (if specified).
 }
 \references{
-  Oliveira, M., Crujeiras, R.M. and Rodríguez--Casal, A. (2012) A plug--in rule for bandwidth selection in circular density. \emph{Computational 
+  Oliveira, M., Crujeiras, R.M. and Rodr?guez--Casal, A. (2012) A plug--in rule for bandwidth selection in circular density. \emph{Computational
   Statistics and Data Analysis}, \bold{56}, 3898--3908.
 
-Oliveira, M., Crujeiras R.M. and Rodríguez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software}, 
-\bold{61}(9), 1--26. \url{http://www.jstatsoft.org/v61/i09/}
+Oliveira, M., Crujeiras R.M. and Rodr?guez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software},
+\bold{61}(9), 1--26. \url{https://www.jstatsoft.org/v61/i09/}
 }
 
-\author{ María Oliveira, Rosa M. Crujeiras and Alberto Rodríguez--Casal}
+\author{ Mar?a Oliveira, Rosa M. Crujeiras and Alberto Rodr?guez--Casal}
 
 \seealso{\code{\link{kern.den.circ}}, \code{\link{bw.rt}}, \code{\link{bw.CV}}, \code{\link{bw.boot}} }
 

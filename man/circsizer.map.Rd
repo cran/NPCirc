@@ -7,7 +7,7 @@
    This function plots the CircSiZer map for \code{circsizer} objects.
 }
 \usage{
-circsizer.map(circsizer.object, type, zero, clockwise, title=NULL, labels=NULL, 
+circsizer.map(circsizer.object, type, zero, clockwise, title=NULL, labels=NULL,
 label.pos=NULL, rad.pos=NULL, raw.data=FALSE)
 }
 
@@ -28,12 +28,12 @@ label.pos=NULL, rad.pos=NULL, raw.data=FALSE)
   CircSiZer map.
 }
 
-\references{ 
-Oliveira, M., Crujeiras R.M. and Rodríguez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software}, 
-\bold{61}(9), 1--26. \url{http://www.jstatsoft.org/v61/i09/}
+\references{
+Oliveira, M., Crujeiras R.M. and Rodr?guez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software},
+\bold{61}(9), 1--26. \url{https://www.jstatsoft.org/v61/i09/}
 }
 
-\author{ María Oliveira, Rosa M. Crujeiras and Alberto Rodríguez--Casal}
+\author{ Mar?a Oliveira, Rosa M. Crujeiras and Alberto Rodr?guez--Casal}
 
 \seealso{\code{\link{circsizer.density}}, \code{\link{circsizer.regression}} }
 

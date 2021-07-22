@@ -4,11 +4,11 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{ Add a plot for circular regression}
 \description{
-The \code{lines} add a plot for \code{regression.circular} objects. 
+The \code{lines} add a plot for \code{regression.circular} objects.
 }
 \usage{
 \method{lines}{regression.circular}(x, plot.type=c("circle", "line"), points.plot=FALSE, rp.type="p", type="l",
-line.col=1, points.col="grey", points.pch=1, units=NULL, zero=NULL, 
+line.col=1, points.col="grey", points.pch=1, units=NULL, zero=NULL,
 clockwise=NULL, radial.lim=NULL, plot.info=NULL, ...)
 }
 \arguments{
@@ -18,24 +18,24 @@ clockwise=NULL, radial.lim=NULL, plot.info=NULL, ...)
   \item{rp.type, type}{ Character indicating the type of plotting.}
   \item{line.col}{ Color code or name.}
   \item{points.col}{ Color code or name for the original data. Used if \code{points.plot=TRUE}.}
-  \item{points.pch}{ Plotting 'character', i.e., symbol to use for the original data. Used if 
+  \item{points.pch}{ Plotting 'character', i.e., symbol to use for the original data. Used if
                      \code{points.plot=TRUE}.}
   \item{units}{ Units measure used in the plot. If \code{NULL} the value is taken from the attribute of object 'x' from the argument 'x', i.e. x$x.}
   \item{zero}{ Where to place the starting (zero) point, i.e., the zero of the plot. Ignored if \code{plot.info} is provided.}
   \item{clockwise}{ Logical, indicating the sense of rotation of the plot: clockwise if \code{TRUE} and counterclockwise if \code{FALSE}. Ignored if plot.info is provided.}
   \item{radial.lim}{ The range of the grid circle. Used if \code{plot.type="circle"}.}
   \item{plot.info}{ An object from \code{plot.regression.circular} that contains information on the \code{zero}, the \code{clockwise} and \code{radial.lim}. Used if \code{plot.type="circle"}.}
-  \item{...}{ Further arguments to be passed to \code{\link{lines.default}} (if \code{plot.type="line"}) or to \code{\link{radial.plot}} 
-              (if \code{plot.type="circle"} and \code{x} is the output of \code{\link{kern.reg.circ.lin}}) or to \code{\link{lines3d}} (if \code{plot.type="circle"}) 
+  \item{...}{ Further arguments to be passed to \code{\link{lines.default}} (if \code{plot.type="line"}) or to \code{\link{radial.plot}}
+              (if \code{plot.type="circle"} and \code{x} is the output of \code{\link{kern.reg.circ.lin}}) or to \code{\link{lines3d}} (if \code{plot.type="circle"})
 	      and \code{x} is the output of \code{\link{kern.reg.circ.circ}}).}
 }
 
-\references{ 
-Oliveira, M., Crujeiras R.M. and Rodríguez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software}, 
-\bold{61}(9), 1--26. \url{http://www.jstatsoft.org/v61/i09/}
+\references{
+Oliveira, M., Crujeiras R.M. and Rodr?guez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software},
+\bold{61}(9), 1--26. \url{https://www.jstatsoft.org/v61/i09/}
 }
 
-\author{ María Oliveira, Rosa M. Crujeiras and Alberto Rodríguez--Casal}
+\author{ Mar?a Oliveira, Rosa M. Crujeiras and Alberto Rodr?guez--Casal}
 
 \seealso{\code{\link{kern.reg.circ.lin}}, \code{\link{kern.reg.circ.circ}}, \code{\link{kern.reg.lin.circ}}, \code{\link{plot.regression.circular}}}
 

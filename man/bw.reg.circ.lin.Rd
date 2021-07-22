@@ -31,28 +31,28 @@ bw.reg.lin.circ(x, y, method="LL", option=1, lower=0, upper=50, tol=1e-2)
 }
 \details{
 %  The LSCV smoothing parameter is obtained as the value of \eqn{\nu} that minimizes expression (13) in Oliveira et al. (2013).
-  For nonparmetric regression with circular response, given \eqn{(X_i,Y_i)}, \eqn{i=1,\ldots,n}: 
+  For nonparmetric regression with circular response, given \eqn{(X_i,Y_i)}, \eqn{i=1,\ldots,n}:
   If \code{option=1}, the cross--validation smoothing parameter is computed as the value that minimizes \eqn{\sum_{i=1}^{n}(-\cos(Y_i-\hat{f}^{-i}(X_i))}, where \eqn{\hat{f}^{-i}} denotes the estimator computed with all the observations except \eqn{(X_i,Y_i)}.
 
   If \code{option=2}, the cross--validation smoothing parameter is computed as the value that minimizes \eqn{n^{-1}\sum_{i=1}^{n}(d(Y_i,\hat{f}^{-i}(X_i))^2} where \eqn{d(Y_i,\hat{f}^{-i}(X_i)=\min(|Y_i-\hat{f}^{-i}(X_i)|,2\pi-|Y_i-\hat{f}^{-i}(X_i)|)}.
-  
+
   The NAs will be automatically removed.
 }
 \value{
   Value of the smoothing parameter.
 }
-\references{ 
-Oliveira, M., Crujeiras R.M. and Rodríguez--Casal, A. (2013) Nonparametric circular methods for exploring environmental data. 
+\references{
+Oliveira, M., Crujeiras R.M. and Rodr?guez--Casal, A. (2013) Nonparametric circular methods for exploring environmental data.
 \emph{Environmental and Ecological Statistics}, \bold{20}, 1--17.
 
-Di Marzio, M., Panzera A. and Taylor, C. C. (2012) Non--parametric regression for circular responses. \emph{Scandinavian Journal of Statistics}, 
+Di Marzio, M., Panzera A. and Taylor, C. C. (2012) Non--parametric regression for circular responses. \emph{Scandinavian Journal of Statistics},
 \bold{40}, 228--255.
 
-Oliveira, M., Crujeiras R.M. and Rodríguez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software}, 
-\bold{61}(9), 1--26. \url{http://www.jstatsoft.org/v61/i09/}
+Oliveira, M., Crujeiras R.M. and Rodr?guez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software},
+\bold{61}(9), 1--26. \url{https://www.jstatsoft.org/v61/i09/}
 }
 
-\author{ María Oliveira, Rosa M. Crujeiras and Alberto Rodríguez--Casal}
+\author{ Mar?a Oliveira, Rosa M. Crujeiras and Alberto Rodr?guez--Casal}
 
 \seealso{\code{\link{kern.reg.circ.lin}}, \code{\link{kern.reg.circ.circ}}, \code{\link{kern.reg.lin.circ}} }
 
