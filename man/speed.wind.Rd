@@ -24,11 +24,11 @@ There is no data in November 2005, December 2005, January 2006, February 2006, F
 December 2004, January 2007, December 2009 are not fully observed.
 }
 \source{
-Data can be freely downloaded from the Spanish Portuary Authority (\url{http://www.puertos.es}).
+Data can be freely downloaded from the Spanish Portuary Authority (\url{https://www.puertos.es/}).
 }
 \references{ 
 
-Oliveira, M., Crujeiras, R.M. and Rodríguez--Casal (2014) CircSiZer: an exploratory tool for circular data. \emph{Environmental and Ecological Statistics}, 
+Oliveira, M., Crujeiras, R.M. and Rodriguez--Casal (2014) CircSiZer: an exploratory tool for circular data. \emph{Environmental and Ecological Statistics}, 
 \bold{21}, 143--159.
 }
 \examples{

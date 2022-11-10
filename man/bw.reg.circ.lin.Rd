@@ -42,17 +42,17 @@ bw.reg.lin.circ(x, y, method="LL", option=1, lower=0, upper=50, tol=1e-2)
   Value of the smoothing parameter.
 }
 \references{
-Oliveira, M., Crujeiras R.M. and Rodr?guez--Casal, A. (2013) Nonparametric circular methods for exploring environmental data.
+Oliveira, M., Crujeiras R.M. and Rodriguez--Casal, A. (2013) Nonparametric circular methods for exploring environmental data.
 \emph{Environmental and Ecological Statistics}, \bold{20}, 1--17.
 
 Di Marzio, M., Panzera A. and Taylor, C. C. (2012) Non--parametric regression for circular responses. \emph{Scandinavian Journal of Statistics},
 \bold{40}, 228--255.
 
-Oliveira, M., Crujeiras R.M. and Rodr?guez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software},
+Oliveira, M., Crujeiras R.M. and Rodriguez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software},
 \bold{61}(9), 1--26. \url{https://www.jstatsoft.org/v61/i09/}
 }
 
-\author{ Mar?a Oliveira, Rosa M. Crujeiras and Alberto Rodr?guez--Casal}
+\author{ Maria Oliveira, Rosa M. Crujeiras and Alberto Rodriguez--Casal}
 
 \seealso{\code{\link{kern.reg.circ.lin}}, \code{\link{kern.reg.circ.circ}}, \code{\link{kern.reg.lin.circ}} }
 

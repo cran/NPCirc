@@ -57,7 +57,7 @@ Oliveira, M., Crujeiras R.M. and Rodriguez-Casal, A. (2013) Nonparametric circul
 }
 \author{
 %%  ~~who you are~~
-María Alonso-Pena, Jose Ameijeiras-Alonso and Rosa M. Crujeiras
+Maria Alonso-Pena, Jose Ameijeiras-Alonso and Rosa M. Crujeiras
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~

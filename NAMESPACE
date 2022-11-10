@@ -1,20 +1,26 @@
-#useDynLib(NPCirc)
+useDynLib(NPCirc, .registration=TRUE)
+importFrom(Rcpp, evalCpp)
+exportPattern("^[[:alpha:]]+")
 import(circular)
 importFrom(misc3d, parametric3d, drawScene.rgl)
 importFrom(movMF, movMF)
 importFrom(plotrix, boxed.labels, radial.plot) 
 importFrom(rgl, lines3d, points3d, texts3d)
 importFrom(shape, Arrows)
+importFrom(shape, Arrows)
+importFrom(Bolstad2, sintegral)
+importFrom("utils", "data")
 importFrom("graphics", "hist.default", "lines.default", "par", "plot.default", 
 			"points", "points.default", "segments", "text")
 importFrom("stats", "dist", "dnorm", "optimize", "pchisq", "pnorm",
-            "quantile", "rnorm", "runif", "uniroot")
+            "quantile", "rnorm", "runif", "uniroot", "optim", "integrate")
 export(kern.den.circ,kern.reg.circ.lin,kern.reg.circ.circ,kern.reg.lin.circ,bw.CV,bw.rt,bw.pi,
 bw.boot,bw.reg.circ.lin,bw.reg.circ.circ,bw.reg.lin.circ,
 dcircmix,rcircmix,dwsn,rwsn,circsizer.density,circsizer.regression,circsizer.map,ancova.circ.lin,
-ancova.lin.circ,ancova.circ.circ,noeffect.circ.lin,noeffect.lin.circ,noeffect.circ.circ)
+ancova.lin.circ,ancova.circ.circ,noeffect.circ.lin,noeffect.lin.circ,noeffect.circ.circ,
+bw.circ.local.lik,circ.local.lik,bw.modalreg.circ.lin,bw.modalreg.circ.circ, bw.modalreg.lin.circ,
+modalreg.circ.lin,modalreg.circ.circ,modalreg.lin.circ,kern.dpreg.circ,bw.joint.dpcirc,dpreg.circ,bw.AA)
 S3method(plot, regression.circular)
 S3method(lines, regression.circular)
 S3method(print, regression.circular)
 S3method(print, circsizer)
-

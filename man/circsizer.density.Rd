@@ -64,7 +64,7 @@ If \code{display==TRUE}, the function also returns the CircSiZer map for density
 Chaudhuri, P. and Marron, J.S. (1999). SiZer for exploration of structures in curves, \emph{Journal of the American Statistical Association}, \bold{94},
 807--823.
 
-Oliveira, M., Crujeiras, R.M. and Rodr?guez--Casal (2014) CircSiZer: an exploratory tool for circular data. \emph{Environmental and Ecological Statistics},
+Oliveira, M., Crujeiras, R.M. and Rodriguez--Casal (2014) CircSiZer: an exploratory tool for circular data. \emph{Environmental and Ecological Statistics},
 \bold{21}, 143--159.
 
 Oliveira, M., Crujeiras R.M. and Rodr?guez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software},
@@ -72,7 +72,7 @@ Oliveira, M., Crujeiras R.M. and Rodr?guez--Casal, A. (2014) NPCirc: an R packag
 }
 
 
-\author{ Mar?a Oliveira, Rosa M. Crujeiras and Alberto Rodr?guez--Casal}
+\author{ Maria Oliveira, Rosa M. Crujeiras and Alberto Rodriguez--Casal}
 
 \seealso{\code{\link{circsizer.map}} }
 

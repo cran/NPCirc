@@ -1,7 +1,7 @@
 kern.reg.circ.lin<-function(x,y,t=NULL,bw=NULL,method="LL",from=circular(0),to=circular(2*pi),len=250,tol=300){
 	name <- deparse(substitute(x))
 	datax <- x
-	datay <- y 
+	datay <- y
 	if (!is.numeric(x)) stop("argument 'x' must be numeric")
 	if (!is.numeric(y)) stop("argument 'y' must be numeric")
 	if (length(x) != length(y)) stop("'x' and 'y' must have the same number of observations")
@@ -47,16 +47,16 @@ kern.reg.circ.lin<-function(x,y,t=NULL,bw=NULL,method="LL",from=circular(0),to=c
 	n <- length(x)
 	if (n==0) stop("No observations (at least after removing missing values)")
 	if (is.null(bw)){
-		bw <- bw.reg.circ.lin(x,y,method)		
+		bw <- bw.reg.circ.lin(x,y,method)
 	}else{
 		if (is.numeric(bw)){
 			if (bw<0){
-				warning("Argument 'bw' must be positive. The value of 'bw' was computed by using the plug--in rule")
-				bw <- bw.reg.circ.lin(x,y,method)	
+				warning("Argument 'bw' must be positive. The value of 'bw' was computed by using cross-validatoin")
+				bw <- bw.reg.circ.lin(x,y,method)
 			}
 		}else{
- 			warning("Argument 'bw' must be numeric. The value of 'bw' was computed by using the plug--in rule")
-			bw <- bw.reg.circ.lin(x,y,method)	
+ 			warning("Argument 'bw' must be numeric. The value of 'bw' was computed by using cross-validation")
+			bw <- bw.reg.circ.lin(x,y,method)
 		}
 	}
 	attr(x, "class") <- attr(x, "circularp") <- NULL
@@ -65,6 +65,6 @@ kern.reg.circ.lin<-function(x,y,t=NULL,bw=NULL,method="LL",from=circular(0),to=c
 	attr(t, "class") <- attr(t, "circularp") <- NULL
 	if (method=="NW") fhat <- RegCircLin(x,y,t,bw,method="NW",tol=tol)
 	else fhat <- RegCircLin(x,y,t,bw,method="LL",tol=tol)
-	structure(list(datax = datax, datay = datay, x = tt, y = fhat, bw = bw, n = n, kernel = "vonmises", 
+	structure(list(datax = datax, datay = datay, x = tt, y = fhat, bw = bw, n = n, kernel = "vonmises",
 	call = match.call(), data.name = name, has.na = FALSE), class = "regression.circular")
 }

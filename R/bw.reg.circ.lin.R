@@ -12,7 +12,7 @@ bw.reg.circ.lin<-function(x,y,method="LL",lower=0,upper=50,tol=1e-2){
 	if ((sum(nax)+sum(nay))>0) warning("Missing values were removed.", "\n")
 	n <- length(x)
 	if (n==0) stop("No observations (at least after removing missing values)")
-	if (!is.numeric(upper)){ 
+	if (!is.numeric(upper)){
 		warning("argument 'upper' must be numeric. Default upper boundary was used")
 		upper <- 50
 	}
@@ -26,6 +26,7 @@ bw.reg.circ.lin<-function(x,y,method="LL",lower=0,upper=50,tol=1e-2){
 		lower <- 0
 	}
 	if (!is.numeric(tol)) stop("argument 'tol' must be numeric")
+
 	lscv<-function(x,bw){
 		error<-numeric(n)
 		for (j in 1:n){
@@ -34,7 +35,7 @@ bw.reg.circ.lin<-function(x,y,method="LL",lower=0,upper=50,tol=1e-2){
 		return(mean(error))
 	}
 	bw.lscv <- optimize(function(h)lscv(x,h),interval=c(lower,upper),tol=tol)$minimum
- 	if (bw.lscv < lower + tol | bw.lscv > upper - tol) 
+ 	if (bw.lscv < lower + tol | bw.lscv > upper - tol)
       warning("minimum occurred at one end of the range")
 	return(bw.lscv)
 }

@@ -15,10 +15,10 @@ These data, analyzed by  Oliveira et al. (2013), consists of observations of tem
 Data contains NAs.
 }
 \source{
-The authors want to acknowledge Prof. Augusto Pérez--Alberti for providing the data, collected within the Project POL2006-09071 from the Spanish Ministry 
+The authors want to acknowledge Prof. Augusto P?rez--Alberti for providing the data, collected within the Project POL2006-09071 from the Spanish Ministry 
 of Education and Science.
 }
-\references{ Oliveira, M., Crujeiras R.M. and Rodríguez--Casal, A. (2013) Nonparametric circular methods for exploring environmental data. 
+\references{ Oliveira, M., Crujeiras R.M. and Rodriguez--Casal, A. (2013) Nonparametric circular methods for exploring environmental data. 
 \emph{Environmental and Ecological Statistics}, \bold{20}, 1--17.
 }
 \examples{

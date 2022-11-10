@@ -1,15 +1,15 @@
 circsizer.map<-function(circsizer.object,type,zero,clockwise,title=NULL,
 labels=NULL,label.pos=NULL,rad.pos=NULL,raw.data=FALSE){
 
-	if(class(circsizer.object)!="circsizer") stop("Argument 'circsizer.object' must be the output of the
+	if(!inherits(circsizer.object,"circsizer")) stop("Argument 'circsizer.object' must be the output of the
 	'circsizer.density' or 'cirsizer.regression' functions")
 	if (is.null(labels)){
-		if (!any(type==1:5)){ 
+		if (!any(type==1:5)){
 			type=3
 			warning("Value specified for argument 'type' is not valid. 'type=3' was used")
 		}
 		label.pos <- rad.pos <- seq(0,7*pi/4,by=pi/4)
-	}else{ 
+	}else{
 		if(length(labels)!=length(label.pos)){
 			warning("Arguments 'labels' and 'label.pos' are not the same length. 'type=3' was used")
 			type=3
@@ -20,7 +20,7 @@ labels=NULL,label.pos=NULL,rad.pos=NULL,raw.data=FALSE){
 		}
 	}
 	if (type==5){label.pos <- seq(pi/12,23*pi/12,by=pi/6)
-			 rad.pos <- seq(0,11*pi/6,by=pi/6) 
+			 rad.pos <- seq(0,11*pi/6,by=pi/6)
 	}
 	if (type==1) labels <- c("N","NE","E","SE","S","SW","W","NW")
 	if (type==2) labels <- c("0h","3h","6h","9h","12h","15h","18h","21h")
@@ -28,18 +28,18 @@ labels=NULL,label.pos=NULL,rad.pos=NULL,raw.data=FALSE){
 		                   expression(5*pi/4),expression(3*pi/2),expression(7*pi/4))
 	if (type==4) labels <- c("0","45","90","135","180","225","270","315")
 	if (type==5) labels <- c("Jan","Feb","Mar","Apr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dec")
-	
+
 	# Create the plot
 	bw.plot<-circsizer.object$bw
-	nbw <- length(bw.plot) 
-	stbw <- (bw.plot[2]-bw.plot[1])/2 
+	nbw <- length(bw.plot)
+	stbw <- (bw.plot[2]-bw.plot[1])/2
 	radlim<- c((bw.plot[1]-stbw),bw.plot[nbw]+stbw)
 	radlim[1]<-radlim[1]-diff(radlim)*0.2
 	grid.pos<-pretty(radlim)
 	st<-grid.pos[2]-grid.pos[1]
 	radial.plot(0,rp.type="s",labels="",point.col="white",radial.lim=radlim,show.grid=F,show.radial.grid=F,
-     	radial.labels="",show.grid.labels=F,start=zero,clockwise=clockwise,main=title) 
-  
+     	radial.labels="",show.grid.labels=F,start=zero,clockwise=clockwise,main=title)
+
 	# Add the labels
 	label.prop=1.12
 	maxlength=diff(radlim)
@@ -50,7 +50,7 @@ labels=NULL,label.pos=NULL,rad.pos=NULL,raw.data=FALSE){
 	text(xpos, ypos, labels, cex = par("cex.axis"))
 
 	# Plot the arrow
-	arrow.pos <- seq(pi/4-0.13, pi/4+0.13, length=250)  
+	arrow.pos <- seq(pi/4-0.13, pi/4+0.13, length=250)
 	xarrowpos <- cos(arrow.pos) * maxlength * 1.28
 	yarrowpos <- sin(arrow.pos) * maxlength * 1.28
 	points.default(xarrowpos,yarrowpos,type="l",lwd=2)
@@ -87,13 +87,13 @@ labels=NULL,label.pos=NULL,rad.pos=NULL,raw.data=FALSE){
 		xcir<- xcir[-ind]
 		ncir<- ncir-length(ind)
 	}
-	for(i in 1:ncir){radial.plot(rep(xcir[i],250),rad,rp.type="p",radial.lim=radlim,add=T)} 
+	for(i in 1:ncir){radial.plot(rep(xcir[i],250),rad,rp.type="p",radial.lim=radlim,add=T)}
 	# Add the radius
-	segments(rep(0,9),rep(0,9),cos(rad.pos)*maxlength,sin(rad.pos)*maxlength) 
+	segments(rep(0,9),rep(0,9),cos(rad.pos)*maxlength,sin(rad.pos)*maxlength)
 	# Add the values of the smoothing parameter along the radius
 	xpos <- xcir - radlim[1]
 	ypos <- rep(0, ncir)
-	boxed.labels(xpos,ypos,as.character(xcir),border = FALSE,cex=0.7) 
+	boxed.labels(xpos,ypos,as.character(xcir),border = FALSE,cex=0.7)
 	# Add the raw data
 	if (raw.data){
 		x <- circsizer.object$data

@@ -33,8 +33,8 @@ kern.reg.lin.circ(x, y, t=NULL, bw, method="LL", len=250)
              \code{\link{bw.reg.lin.circ}}.}
   \item{method}{ Character string giving the estimator to be used. This must be one of \code{"LL"} for Local-Linear estimator or \code{"NW"} for
                  Nadaraya-Watson estimator. Default \code{method="LL"}.}
-  \item{from, to}{ Left and right-most points of the grid at which the density is to be estimated. The objects are coerced to class \code{\link{circular}}.}
-  \item{len}{ Number of equally spaced points at which the density is to be estimated.}
+  \item{from, to}{ Left and right-most points of the grid at which the regression function is to be estimated. The objects are coerced to class \code{\link{circular}}.}
+  \item{len}{ Number of equally spaced points at which the regression function is to be estimated.}
   \item{tol}{ Tolerance parameter to avoid overflow when \code{bw} is larger than \code{tol}. Default is \code{tol=300}.}
   \item{digits}{ Integer indicating the precision to be used.}
   \item{...}{ further arguments}
@@ -46,7 +46,7 @@ kern.reg.lin.circ(x, y, t=NULL, bw, method="LL", len=250)
 \value{
 An object with class "regression.circular" whose underlying structure is a list containing the following components:
 
-\item{data}{ Original dataset.}
+\item{datax, datay}{ Original dataset.}
 \item{x}{ The n coordinates of the points where the regression is estimated.}
 \item{y}{ The estimated values.}
 \item{bw}{ The smoothing parameter used.}
@@ -61,14 +61,14 @@ Di Marzio, M., Panzera A. and Taylor, C. C. (2009) Local polynomial regression f
 Di Marzio, M., Panzera A. and Taylor, C. C. (2012) Non--parametric regression for circular responses. \emph{Scandinavian Journal of Statistics},
 \bold{40}, 228--255.
 
-Oliveira, M., Crujeiras R.M. and Rodr?guez--Casal, A. (2013) Nonparametric circular methods for exploring environmental data.
+Oliveira, M., Crujeiras R.M. and Rodriguez--Casal, A. (2013) Nonparametric circular methods for exploring environmental data.
 \emph{Environmental and Ecological Statistics}, \bold{20}, 1--17.
 
-Oliveira, M., Crujeiras R.M. and Rodr?guez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software},
+Oliveira, M., Crujeiras R.M. and Rodriguez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software},
 \bold{61}(9), 1--26. \url{https://www.jstatsoft.org/v61/i09/}
 }
 
-\author{ Mar?a Oliveira, Rosa M. Crujeiras and Alberto Rodr?guez--Casal}
+\author{ Maria Oliveira, Rosa M. Crujeiras and Alberto Rodriguez--Casal}
 
 \seealso{\code{\link{plot.regression.circular}}, \code{\link{lines.regression.circular}}}
 

@@ -31,7 +31,7 @@ Pewsey, A. (2000) The wrapped skew--Normal distribution on the circle. \emph{Com
 in Statistics - Theory and Methods}, \bold{29}, 2459--2472.
 }
 
-\author{ María Oliveira, Rosa M. Crujeiras and Alberto Rodríguez--Casal}
+\author{ Maria Oliveira, Rosa M. Crujeiras and Alberto Rodriguez--Casal}
 
 %\seealso{\code{\link{dcircmix}}, \code{\link{rcircmix}} }
 

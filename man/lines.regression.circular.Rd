@@ -31,11 +31,11 @@ clockwise=NULL, radial.lim=NULL, plot.info=NULL, ...)
 }
 
 \references{
-Oliveira, M., Crujeiras R.M. and Rodr?guez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software},
+Oliveira, M., Crujeiras R.M. and Rodriguez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software},
 \bold{61}(9), 1--26. \url{https://www.jstatsoft.org/v61/i09/}
 }
 
-\author{ Mar?a Oliveira, Rosa M. Crujeiras and Alberto Rodr?guez--Casal}
+\author{ Maria Oliveira, Rosa M. Crujeiras and Alberto Rodriguez--Casal}
 
 \seealso{\code{\link{kern.reg.circ.lin}}, \code{\link{kern.reg.circ.circ}}, \code{\link{kern.reg.lin.circ}}, \code{\link{plot.regression.circular}}}
 

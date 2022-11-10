@@ -38,7 +38,7 @@ bw.pi <- function(x,M=NULL,lower=0,upper=100,np=500,tol=0.1,outM=FALSE){
 		x <- circular(x)
 		##  Mixture of M=2 components
 		y2 <- try(movMF(z, 2, start="S"),TRUE)
-		if (class(y2)=="try-error"){
+		if (inherits(y2, "try-error")){
 			AIC2 <- NaN
 			mean2 <- kappa2 <- p2 <- NA
 		}else{ 
@@ -57,7 +57,7 @@ bw.pi <- function(x,M=NULL,lower=0,upper=100,np=500,tol=0.1,outM=FALSE){
 		}
 		##  Mixture of M=3 components
 		y3 <- try(movMF(z, 3, start="S"),TRUE)
-		if (class(y3)=="try-error"){
+		if (inherits(y3, "try-error")){
 			AIC3 <- NaN
 			mean3 <- kappa3 <- p3 <- NA
 		}else{ 
@@ -76,7 +76,7 @@ bw.pi <- function(x,M=NULL,lower=0,upper=100,np=500,tol=0.1,outM=FALSE){
 		}
 		##  Mixture of M=4 components
 		y4 <- try(movMF(z, 4, start="S"),TRUE)
-		if (class(y4)=="try-error"){
+		if (inherits(y4, "try-error")){
 			AIC4 <- NaN
 			mean4 <- kappa4 <- p4 <- NA
 		}else{ 
@@ -95,7 +95,7 @@ bw.pi <- function(x,M=NULL,lower=0,upper=100,np=500,tol=0.1,outM=FALSE){
 		}
 		##  Mixture of M=5 components
 		y5 <- try(movMF(z, 5, start="S"),TRUE)
-		if (class(y5)=="try-error"){
+		if (inherits(y5, "try-error")){
 			AIC5 <- NaN
 			mean5 <- kappa5 <- p5 <- NA
 		}else{ 
@@ -128,7 +128,7 @@ bw.pi <- function(x,M=NULL,lower=0,upper=100,np=500,tol=0.1,outM=FALSE){
 		}
 
 		x<-as.numeric(x)
-		if (class(y2)=="try-error" & class(y3)=="try-error" & class(y4)=="try-error" & class(y5)=="try-error"){
+		if (inherits(y2, "try-error") & inherits(y3, "try-error") & inherits(y4, "try-error") & inherits(y5, "try-error")){
 			M <- 1
 			bw <- bw.rt(x)
 			warning("The smoothing parameter was computed by using the rule of thumb")
@@ -167,7 +167,7 @@ bw.pi <- function(x,M=NULL,lower=0,upper=100,np=500,tol=0.1,outM=FALSE){
 			M <- 1
 			warning("The smoothing parameter was computed by using the rule of thumb")
 		}else{
-			if (class(y2)=="try-error"){		
+			if (inherits(y2, "try-error")){		
 				bw <- bw.rt(x)
 				M <- 1
 				warning("The smoothing parameter was computed by using the rule of thumb")

@@ -30,14 +30,14 @@ bw.pi(x, M=NULL, lower=0, upper=100, np=500, tol=0.1, outM=FALSE)
   Vector with the value of the smoothing parameter and the number of components in the mixture (if specified).
 }
 \references{
-  Oliveira, M., Crujeiras, R.M. and Rodr?guez--Casal, A. (2012) A plug--in rule for bandwidth selection in circular density. \emph{Computational
+  Oliveira, M., Crujeiras, R.M. and Rodriguez--Casal, A. (2012) A plug--in rule for bandwidth selection in circular density. \emph{Computational
   Statistics and Data Analysis}, \bold{56}, 3898--3908.
 
-Oliveira, M., Crujeiras R.M. and Rodr?guez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software},
+Oliveira, M., Crujeiras R.M. and Rodriguez--Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software},
 \bold{61}(9), 1--26. \url{https://www.jstatsoft.org/v61/i09/}
 }
 
-\author{ Mar?a Oliveira, Rosa M. Crujeiras and Alberto Rodr?guez--Casal}
+\author{ Maria Oliveira, Rosa M. Crujeiras and Alberto Rodriguez--Casal}
 
 \seealso{\code{\link{kern.den.circ}}, \code{\link{bw.rt}}, \code{\link{bw.CV}}, \code{\link{bw.boot}} }
 
