@@ -13,7 +13,7 @@ kern.den.circ(x,z=NULL,bw="AA",deriv.order=0,kernel="vonmises",na.rm = FALSE,
 }
 
 \arguments{
-  \item{x}{ Data from which the estimate is to be computed. The object is coerced to class \code{\link{circular}}.}
+  \item{x}{ Data from which the estimate is to be computed. The object is coerced to class \code{\link[circular]{circular}}.}
   \item{z}{ Points where the density derivative is estimated. If \code{NULL}
     equally spaced points are used according to the parameters
     \code{from}, \code{to} and \code{n}.}
@@ -32,7 +32,7 @@ kern.den.circ(x,z=NULL,bw="AA",deriv.order=0,kernel="vonmises",na.rm = FALSE,
 }
 
 \value{
-  An object with class \code{\link{density.circular}} whose
+  An object with class \code{\link[circular]{density.circular}} whose
   underlying structure is a list containing the following components.
   \item{data}{original dataset.}
   \item{x}{the \code{n} coordinates of the points where the density is
@@ -56,7 +56,7 @@ Oliveira, M., Crujeiras R.M. and Rodr?guez-Casal, A. (2014) NPCirc: an R package
 Jose Ameijeiras-Alonso.
 }
 
-\seealso{\code{\link{bw.AA}}, \code{\link{plot.density.circular}}, \code{\link{lines.density.circular}}, \code{\link{bw.pi}}, \code{\link{bw.rt}}, \code{\link{bw.CV}}, \code{\link{bw.boot}} }
+\seealso{\code{\link{bw.AA}}, \code{\link[circular]{plot.density.circular}}, \code{\link[circular]{lines.density.circular}}, \code{\link{bw.pi}}, \code{\link{bw.rt}}, \code{\link{bw.CV}}, \code{\link{bw.boot}} }
 \examples{
 set.seed(2022)
 n <- 50

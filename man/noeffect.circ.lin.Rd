@@ -19,8 +19,8 @@ noeffect.circ.circ(x, y, bw, method = "LL", n_boot = 500)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{Vector of data for the independent variable. The object is coerced to              class \code{\link{circular}} when using functions \code{noeffect.circ.lin} and \code{noeffect.circ.circ}.}
-  \item{y}{Vector of data for the dependent variable. This must be same length as             \code{x}. The object is coerced to class \code{\link{circular}} when using functions \code{noeffect.lin.circ} and \code{noeffect.circ.circ}.}
+  \item{x}{Vector of data for the independent variable. The object is coerced to              class \code{\link[circular]{circular}} when using functions \code{noeffect.circ.lin} and \code{noeffect.circ.circ}.}
+  \item{y}{Vector of data for the dependent variable. This must be same length as             \code{x}. The object is coerced to class \code{\link[circular]{circular}} when using functions \code{noeffect.lin.circ} and \code{noeffect.circ.circ}.}
   \item{bw}{Smoothing parameter to be used. If not provided, functions \code{noeffect.circ.lin} and  \code{noeffect.circ.circ} select \eqn{4cv} and function  \code{noeffect.lin.circ} selects \eqn{cv/4},  where \eqn{cv} is the parameter selected by cross-validation.}
   \item{method}{Character string giving the estimator to be used. This must be one of \code{"LL"} for Local-Linear estimator or \code{"NW"} for Nadaraya-Watson estimator. Default \code{method="LL"}.}
   \item{calib}{Character string giving the calibration method to be used in \code{noeffect.circ.lin} function. This must be one of \code{"chisq"} for the chi-squared approximation or \code{"boot"} for the bootstrap calibration.}

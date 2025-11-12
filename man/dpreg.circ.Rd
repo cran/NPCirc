@@ -13,7 +13,7 @@ dpreg.circ(x, y, k = 2, ktilde = 1, startvmu = NULL, startvgam = NULL,
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{Vector of data for the independent variable. The object is coerced to class \code{\link{circular}}.}
+  \item{x}{Vector of data for the independent variable. The object is coerced to class \code{\link[circular]{circular}}.}
   \item{y}{Vector of data for the dependent variable. This must be same length as \code{x} and should contain counts.}
   \item{k}{Number of components for modeling the logarithm of the mean, including the intercept. Equivalent to the number of parameters to be estimated for the mean function.}
   \item{ktilde}{Number of components for modeling the logarithm of the dispersion, including the intercept. Equivalent to the number of parameters to be estimated for the dispersion function.}
@@ -31,7 +31,7 @@ A list containing the following components:
 
 \item{datax, datay}{ Original dataset.}
 \item{coefficients_mu}{ A vector of length \code{k} containing the estimators for the parameters corresponding to the mean.}
-\item{coefficients_mu}{ A vector of length \code{ktilde} containing the estimators for the parameters corresponding to the dispersion.}
+\item{coefficients_gam}{ A vector of length \code{ktilde} containing the estimators for the parameters corresponding to the dispersion.}
 \item{numit}{ Number of iterations needed for convergence.}
 \item{n}{ The sample size after elimination of missing values.}
 \item{call}{ The call which produced the result.}

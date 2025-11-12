@@ -13,7 +13,7 @@ kern.dpreg.circ(x, y, t = NULL, bw, startvmu = NULL, startvgam = NULL, tol= 0.00
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{Vector of data for the independent variable. The object is coerced to class \code{\link{circular}}.}
+  \item{x}{Vector of data for the independent variable. The object is coerced to class \code{\link[circular]{circular}}.}
   \item{y}{Vector of data for the dependent variable. This must be same length as \code{x} and should contain counts.}
   \item{t}{ Points where the regression function  is estimated. If \code{NULL}, equally spaced points are used according to the parameters \code{from}, \code{to} and \code{len}.}
   \item{bw}{Numeric vector of length two containing the smoothing (concentration) parameters used. The first component is the parameter used for the estimation of the mean, while the second component is used for estimating the dispersion. The value of the smoothing parameters can be chosen by using \code{bw.joint.dpcirc}.}
@@ -21,7 +21,7 @@ kern.dpreg.circ(x, y, t = NULL, bw, startvmu = NULL, startvgam = NULL, tol= 0.00
   \item{startvgam}{Vector of length two containing the initial values for the parameters corresponding to the estimation of the dispersion.}
   \item{tol}{Tolerance parameter for convergence in the numerical estimation.}
   \item{maxit}{Maximum number of iterations in the numerical estimation.}
-  \item{from, to}{Left and right-most points of the grid at which the density is to be estimated. The objects are coerced to class \code{\link{circular}}.}
+  \item{from, to}{Left and right-most points of the grid at which the density is to be estimated. The objects are coerced to class \code{\link[circular]{circular}}.}
   \item{len}{Number of equally spaced points at which the function is to be estimated.}
 
 }

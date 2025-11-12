@@ -21,8 +21,8 @@ bw.reg.circ.circ(x, y, method="LL", option=1, lower=0, upper=50, tol=1e-2)
 bw.reg.lin.circ(x, y, method="LL", option=1, lower=0, upper=50, tol=1e-2)
 }
 \arguments{
-  \item{x}{ Vector of data for the independent variable. The object is coerced to class \code{\link{circular}} when using functions \code{bw.reg.circ.lin} and \code{bw.reg.circ.circ}.}
-  \item{y}{ Vector of data for the dependent variable. This must be same length as \code{x}. The object is coerced to class \code{\link{circular}} when using functions \code{bw.reg.circ.circ} and \code{bw.reg.lin.circ}.}
+  \item{x}{ Vector of data for the independent variable. The object is coerced to class \code{\link[circular]{circular}} when using functions \code{bw.reg.circ.lin} and \code{bw.reg.circ.circ}.}
+  \item{y}{ Vector of data for the dependent variable. This must be same length as \code{x}. The object is coerced to class \code{\link[circular]{circular}} when using functions \code{bw.reg.circ.circ} and \code{bw.reg.lin.circ}.}
   \item{method}{ Character string giving the estimator to be used. This must be one of \code{"LL"} or \code{"NW"}. Default \code{method="LL"}.}
   \item{option}{ Cross--validation rule. Default \code{option=1}. See details.}
   \item{lower, upper}{ \code{lower} and \code{upper} boundary of the interval to be used in the search for the value of the smoothing parameter. Default

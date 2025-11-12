@@ -14,7 +14,7 @@ display=TRUE)
 \method{print}{circsizer}(x, digits=NULL, ...)
 }
 \arguments{
-  \item{x}{ Data from which the estimate is to be computed. The object is coerced to class \code{\link{circular}}.}
+  \item{x}{ Data from which the estimate is to be computed. The object is coerced to class \code{\link[circular]{circular}}.}
   \item{bws}{ Vector of smoothing parameters. Values of \code{bws} must be positive. \code{bws} will be coerced to be equally spaced. Length of vector \code{bws} must be at least 2.}
   \item{ngrid}{ Integer indicating the number of equally spaced angles between \eqn{0} and \eqn{2\pi} where the estimator is evaluated. Default \code{ngrid=250}.}
   \item{alpha}{ Significance level for the CircSiZer map. Default \code{alpha=0.05}.}

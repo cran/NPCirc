@@ -26,14 +26,14 @@ kern.reg.lin.circ(x, y, t=NULL, bw, method="LL", len=250)
 \method{print}{regression.circular}(x, digits=NULL, ...)
 }
 \arguments{
-  \item{x}{ Vector of data for the independent variable. The object is coerced to class \code{\link{circular}} when using functions \code{kern.reg.circ.lin} and \code{kern.reg.circ.circ}.}
-  \item{y}{ Vector of data for the dependent variable. This must be same length as \code{x}. The object is coerced to class \code{\link{circular}} when using functions \code{kern.reg.circ.circ} and \code{kern.reg.lin.circ}.}
+  \item{x}{ Vector of data for the independent variable. The object is coerced to class \code{\link[circular]{circular}} when using functions \code{kern.reg.circ.lin} and \code{kern.reg.circ.circ}.}
+  \item{y}{ Vector of data for the dependent variable. This must be same length as \code{x}. The object is coerced to class \code{\link[circular]{circular}} when using functions \code{kern.reg.circ.circ} and \code{kern.reg.lin.circ}.}
   \item{t}{ Points where the regression function  is estimated. If \code{NULL} equally spaced points are used according to the parameters \code{from}, \code{to} and \code{len}.}
   \item{bw}{ Smoothing parameter to be used. The value of the smoothing parameter can be chosen by using the function \code{\link{bw.reg.circ.lin}}, \code{\link{bw.reg.circ.circ}} and
              \code{\link{bw.reg.lin.circ}}.}
   \item{method}{ Character string giving the estimator to be used. This must be one of \code{"LL"} for Local-Linear estimator or \code{"NW"} for
                  Nadaraya-Watson estimator. Default \code{method="LL"}.}
-  \item{from, to}{ Left and right-most points of the grid at which the regression function is to be estimated. The objects are coerced to class \code{\link{circular}}.}
+  \item{from, to}{ Left and right-most points of the grid at which the regression function is to be estimated. The objects are coerced to class \code{\link[circular]{circular}}.}
   \item{len}{ Number of equally spaced points at which the regression function is to be estimated.}
   \item{tol}{ Tolerance parameter to avoid overflow when \code{bw} is larger than \code{tol}. Default is \code{tol=300}.}
   \item{digits}{ Integer indicating the precision to be used.}

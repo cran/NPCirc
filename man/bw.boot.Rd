@@ -11,7 +11,7 @@
 bw.boot(x, lower=0, upper=100, np=500, tol=0.1)
 }
 \arguments{
-  \item{x}{ Data from which the smoothing parameter is to be computed. The object is coerced to class \code{\link{circular}}.}
+  \item{x}{ Data from which the smoothing parameter is to be computed. The object is coerced to class \code{\link[circular]{circular}}.}
   \item{lower, upper}{ \code{lower} and \code{upper} boundary of the interval to be used in the search for the value of the smoothing parameter. Default
                        \code{lower=0} and \code{upper=100}.}
   \item{np}{ Number of points where to evaluate the estimator for numerical integration. Default \code{np=500}.}

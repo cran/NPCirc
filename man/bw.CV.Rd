@@ -10,7 +10,7 @@ This function provides a least squares cross-validation smoothing parameter or a
 bw.CV(x, method="LCV", lower=0, upper=50, tol=1e-2, np=500)
 }
 \arguments{
-  \item{x}{ Data from which the smoothing parameter is to be computed. The object is coerced to class \code{\link{circular}}.}
+  \item{x}{ Data from which the smoothing parameter is to be computed. The object is coerced to class \code{\link[circular]{circular}}.}
   \item{method}{ Character string giving the cross-validation rule to be used. This must be one of \code{"LCV"} or \code{"LSCV"}. Default \code{method="LCV"}.}
   \item{lower, upper}{ \code{lower} and \code{upper} boundary of the interval to be used in the search for the value of the smoothing parameter. Default \code{lower=0} and \code{upper=50}.}
   \item{tol}{ Convergence tolerance for \code{\link{optimize}}. Default \code{tol=1e-2}.}

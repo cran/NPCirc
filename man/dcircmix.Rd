@@ -13,7 +13,7 @@ dcircmix(x, model=NULL, dist=NULL, param=NULL)
 rcircmix(n, model=NULL, dist=NULL, param=NULL)
 }
 \arguments{
-  \item{x}{ Vector of angles where the density is evaluated. The object is coerced to class \code{\link{circular}}.}
+  \item{x}{ Vector of angles where the density is evaluated. The object is coerced to class \code{\link[circular]{circular}}.}
   \item{n}{ Number of observations to generate.}
   \item{model}{ Number between 1 and 20, corresponding with a model defined in Oliveira et al. (2012). See Details.}
   \item{dist}{ Vector of strings with the distributions that participate in the mixture: \code{"unif"}, \code{"vm"}, \code{"car"}, \code{"wc"}, \code{"wn"},

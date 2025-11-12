@@ -28,13 +28,13 @@ modalreg.lin.circ(x, y, t=NULL, bw=NULL, tol = 0.0001, maxit = 500, len=300)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{Vector of data for the independent variable. The object is coerced to class \code{\link{circular}} when using functions \code{modalreg.circ.lin} and \code{modalreg.circ.circ}.}
-  \item{y}{Vector of data for the dependent variable. This must be same length as \code{x}. The object is coerced to class \code{\link{circular}} when using functions \code{modalreg.circ.circ} and \code{modalreg.lin.circ}.}
+  \item{x}{Vector of data for the independent variable. The object is coerced to class \code{\link[circular]{circular}} when using functions \code{modalreg.circ.lin} and \code{modalreg.circ.circ}.}
+  \item{y}{Vector of data for the dependent variable. This must be same length as \code{x}. The object is coerced to class \code{\link[circular]{circular}} when using functions \code{modalreg.circ.circ} and \code{modalreg.lin.circ}.}
   \item{t}{Points where the regression function  is estimated. If \code{NULL}, equally spaced points are used according to the parameters \code{from}, \code{to} and \code{len}.}
   \item{bw}{Vector of length two with the values of the smoothing parameters to be used. The first component corresponds to the smoothing parameter associated to the predictor variable and the second component is the parameter associated to the response variable. If \code{NULL}, the parameters are selected via modal cross-validation.}
   \item{tol}{Tolerance parameter for convergence in the estimation through the conditional (circular) mean shift.}
   \item{maxit}{Maximum number of iterations in the estimation through the conditional (circular) mean shift.}
-  \item{from, to}{ Left and right-most points of the grid at which the regression multifunction is to be estimated. The objects are coerced to class \code{\link{circular}}.}
+  \item{from, to}{ Left and right-most points of the grid at which the regression multifunction is to be estimated. The objects are coerced to class \code{\link[circular]{circular}}.}
   \item{len}{ Number of equally spaced points at which the regression multifunction is to be estimated.}
 }
 \details{

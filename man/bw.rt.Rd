@@ -11,7 +11,7 @@
 bw.rt(x, robust=FALSE, alpha=0.5)
 }
 \arguments{
-  \item{x}{ Data from which the smoothing parameter is to be computed. The object is coerced to class \code{\link{circular}}.}
+  \item{x}{ Data from which the smoothing parameter is to be computed. The object is coerced to class \code{\link[circular]{circular}}.}
   \item{robust}{ Logical, if \code{robust=FALSE} the parameter \eqn{\kappa} is estimated by maximum likelihood, if \code{TRUE} it is estimated
 		as described in Oliveira et al. (2012b). Default \code{robust=FALSE}.}
   \item{alpha}{ Arc probability when \code{robust=TRUE}. Default is \code{alpha=0.5}. See Details.}

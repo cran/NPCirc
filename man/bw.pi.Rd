@@ -11,7 +11,7 @@
 bw.pi(x, M=NULL, lower=0, upper=100, np=500, tol=0.1, outM=FALSE)
 }
 \arguments{
-  \item{x}{ Data from which the smoothing parameter is to be computed. The object is coerced to class \code{\link{circular}}.}
+  \item{x}{ Data from which the smoothing parameter is to be computed. The object is coerced to class \code{\link[circular]{circular}}.}
   \item{M}{ Integer indicating the number of components in the mixture. If \code{M=1}, the rule of thumb is carried out with \eqn{\kappa} estimated by
             maximum likelihood. If \code{M=NULL}, AIC will be used.}
   \item{lower, upper}{ \code{lower} and \code{upper} boundary of the interval to be used in the search for the value of the smoothing parameter. Default

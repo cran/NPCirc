@@ -12,7 +12,7 @@ circsizer.regression(x, y, bws=NULL, adjust=2, ngrid=150, alpha=0.05, B=500,
 B2=250, log.scale=TRUE, display=TRUE)
 }
 \arguments{
-  \item{x}{ Vector of data for the independent variable. The object is coerced to class \code{\link{circular}}.}
+  \item{x}{ Vector of data for the independent variable. The object is coerced to class \code{\link[circular]{circular}}.}
   \item{y}{ Vector of data for the dependent variable. This must be same length as \code{x}.}
   \item{bws}{ Vector of smoothing parameters. Values of \code{bws} must be positive. \code{bws} will be coerced to be equally spaced. Length of vector \code{bws}
 	     must be at least 2.}

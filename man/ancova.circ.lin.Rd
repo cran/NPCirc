@@ -17,8 +17,8 @@ ancova.lin.circ(x, y, g, bw, bw1, test = "eq", method = "LL", n_boot = 500)
 ancova.circ.circ(x, y, g, bw, bw1, test = "eq", method = "LL", n_boot = 500)
 }
 \arguments{
-\item{x}{Vector of data for the independent variable. The object is coerced to class \code{\link{circular}} when using functions \code{ancova.circ.lin} and \code{ancova.circ.circ}.}
-\item{y}{Vector of data for the dependent variable. This must be same length as \code{x}. The object is coerced to class \code{\link{circular}} when using functions \code{ancova.lin.circ} and \code{ancova.circ.circ}.}
+\item{x}{Vector of data for the independent variable. The object is coerced to class \code{\link[circular]{circular}} when using functions \code{ancova.circ.lin} and \code{ancova.circ.circ}.}
+\item{y}{Vector of data for the dependent variable. This must be same length as \code{x}. The object is coerced to class \code{\link[circular]{circular}} when using functions \code{ancova.lin.circ} and \code{ancova.circ.circ}.}
 \item{g}{Vector of group indicators.}
 \item{bw}{Smoothing parameter to be used. If not provided it selects the parameter obtained by cross-validation.}
 \item{bw1}{Preliminary smoothing parameter for the parallelism test.}

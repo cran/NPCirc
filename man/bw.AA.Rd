@@ -12,7 +12,7 @@ bw.AA(x,deriv.order=0,method = c("ste","dpi"),nstage=2,kernel="vonmises",M=NULL,
       approximate=NULL)
 }
 \arguments{
-  \item{x}{ Data from which the smoothing parameter is to be computed. The object is coerced to class \code{\link{circular}}.}
+  \item{x}{ Data from which the smoothing parameter is to be computed. The object is coerced to class \code{\link[circular]{circular}}.}
   \item{deriv.order}{ Derivative order. Default \code{deriv.order=0} (density estimation).}
   \item{method}{ Either \code{"ste"} (solve-the-equation) or \code{"dpi"} (direct plug-in). Can be abbreviated.}
   \item{nstage}{ Number of stages in the plug-in smoothing parameter. Default \code{nstage=2}.}
@@ -48,7 +48,7 @@ Ameijeiras-Alonso, J. (2022). A reliable data-based smoothing parameter selectio
 Jose Ameijeiras-Alonso.
 }
 
-\seealso{\code{\link{density.circular}}, \link{kern.den.circ}, \code{\link{bw.pi}}, \code{\link{bw.rt}}, \code{\link{bw.CV}}, \code{\link{bw.boot}} }
+\seealso{\code{\link[circular]{density.circular}}, \link{kern.den.circ}, \code{\link{bw.pi}}, \code{\link{bw.rt}}, \code{\link{bw.CV}}, \code{\link{bw.boot}} }
 \examples{
 set.seed(2022)
 n <- 50

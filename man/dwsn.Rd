@@ -12,9 +12,9 @@ dwsn(x,xi,eta,lambda,K=NULL,min.k=20)
 rwsn(n,xi,eta,lambda)
 }
 \arguments{
-  \item{x}{ Vector of angles where the density is evaluated . The object is coerced to class \code{\link{circular}}.}
+  \item{x}{ Vector of angles where the density is evaluated . The object is coerced to class \code{\link[circular]{circular}}.}
   \item{n}{ Number of observations.}
-  \item{xi}{ Location parameter. The object is coerced to class \code{\link{circular}}.}
+  \item{xi}{ Location parameter. The object is coerced to class \code{\link[circular]{circular}}.}
   \item{eta}{ Scale parameter.}
   \item{lambda}{ Skewness parameter.}
   \item{K}{ Number of terms to be used in approximating the density. Default \code{K=NULL}.}

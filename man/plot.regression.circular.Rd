@@ -31,8 +31,8 @@ zero=NULL, clockwise=NULL, main=NULL, ...)
   \item{clockwise}{ Logical, indicating the sense of rotation of the plot: clockwise if \code{TRUE} and counterclockwise if \code{FALSE}. If \code{NULL} the
         value is taken from the attribute of object 'x' from the argument 'x', i.e. x$x}
   \item{main}{ An overall title for the plot.}
-  \item{...}{ Further arguments to be passed to \code{\link{plot.default}} (if \code{plot.type="line"}) or to to \code{\link{radial.plot}} (if
-              code{plot.type="circle"} and \code{x} is the output of \code{\link{kern.reg.circ.lin}}) or to \code{\link{lines3d}} (if \code{plot.type="circle"})
+  \item{...}{ Further arguments to be passed to \code{\link{plot.default}} (if \code{plot.type="line"}) or to to \code{\link[plotrix]{radial.plot}} (if
+              \code{plot.type="circle"} and \code{x} is the output of \code{\link{kern.reg.circ.lin}}) or to \code{\link[rgl]{lines3d}} (if \code{plot.type="circle"})
 	      and \code{x} is the output of \code{\link{kern.reg.circ.circ}}).}
 }
 \value{

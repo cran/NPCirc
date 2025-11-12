@@ -15,7 +15,7 @@ circ.local.lik(x, y, t = NULL, bw = NULL, family, p = 1,
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{Vector of data for the independent variable. The object is coerced to class \code{\link{circular}}.}
+  \item{x}{Vector of data for the independent variable. The object is coerced to class \code{\link[circular]{circular}}.}
   \item{y}{Vector of data for the dependent variable. This must be same length as \code{x}.}
   \item{t}{ Points where the regression function  is estimated. If \code{NULL}, equally spaced points are used according to the parameters \code{from}, \code{to} and \code{len}.}
   \item{bw}{Value of the smoothing (concentration) parameter used. The value of the smoothing parameter can be chosen by using \code{bw.circ.local.lik}.}
@@ -24,7 +24,7 @@ circ.local.lik(x, y, t = NULL, bw = NULL, family, p = 1,
   \item{startv}{Vector containing the initial values for the estimation algorithm if family is set as \code{"bernoulli"}, \code{"poisson"} or \code{"gamma"}. The vector must be of length 2 if \code{p = 1} and length 4 if \code{p = 3}. If \code{NULL}, the initial parameters are the ones corresponding to the global mean of the responses.}
    \item{tol}{Tolerance parameter for convergence in the numerical estimation. Only needed if family is one of \code{"bernoulli"}, \code{"poisson"} or \code{"gamma"}. Default is \code{tol = 0.00001}.}
   \item{maxit}{Maximum number of iterations in the numerical estimation. Only needed if family is one of \code{"bernoulli"}, \code{"poisson"} or \code{"gamma"}. Default is \code{maxit = 300}.}
-  \item{from, to}{Left and right-most points of the grid at which the density is to be estimated. The objects are coerced to class \code{\link{circular}}.}
+  \item{from, to}{Left and right-most points of the grid at which the density is to be estimated. The objects are coerced to class \code{\link[circular]{circular}}.}
   \item{len}{Number of equally spaced points at which the density is to be estimated.}
 
 }
