@@ -8,6 +8,9 @@
 \alias{aux_refined}
 \alias{bw.dpi}
 \alias{bw.ste}
+\alias{check_lwd}
+\alias{check_pch}
+\alias{circ.meanshift}
 \alias{cosmoments}
 \alias{cross_validation}
 \alias{CRSC}
@@ -40,6 +43,7 @@
 \alias{MISECL}
 \alias{MISELC}
 \alias{mle.mixvm}
+\alias{mode_estimation}
 \alias{my_fun_DoublePois}
 \alias{my_fun_loglik_cv_nu}
 \alias{NN.circ}
@@ -67,6 +71,7 @@
 \alias{RegCircCirc}
 \alias{RegCircLin}
 \alias{RegLinCirc}
+\alias{segments.circular}
 \title{Internal NPCirc Functions}
 \description{
  Internal NPCirc functions

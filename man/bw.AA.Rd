@@ -42,7 +42,7 @@ For \code{method="ste"}, the minimum number of stages is two (\code{nstage=2}). 
 Value of the smoothing parameter (mean resultant length). When the kernel is \code{vonmises} the bandwidth is equal to the concentration parameter.
 }
 \references{
-Ameijeiras-Alonso, J. (2022). A reliable data-based smoothing parameter selection method for circular kernel estimation.
+Ameijeiras-Alonso, J. (2024). A reliable data-based smoothing parameter selection method for circular kernel estimation. Statistics and Computing Stat Comput, 34, 73.
 }
 \author{
 Jose Ameijeiras-Alonso.

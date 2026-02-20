@@ -1,8 +1,8 @@
 Package: NPCirc
 Type: Package
 Title: Nonparametric Circular Methods
-Version: 3.1.2
-Date: 2025-11-10
+Version: 3.2.1
+Date: 2026-02-19
 Authors@R: c(person(given = "Maria",
                       family = "Alonso-Pena",
                       role = c("aut", "cre"),
@@ -26,8 +26,7 @@ Authors@R: c(person(given = "Maria",
                       family = "Scapini",
                       role = "dtc"))
 Maintainer: Maria Alonso-Pena <mariaalonso.pena@usc.es>
-Description: Nonparametric smoothing methods for density and regression estimation involving circular data, 
-				including the estimation of the mean regression function and other conditional characteristics.
+Description: Nonparametric smoothing methods for density and regression estimation and inference with circular data. The package provides kernel density estimation along with inferential tools such as circular SiZer for feature significance, mode estimation, and modal clustering. It includes multiple methods for selecting the smoothing parameter, allowing users to optimize the trade-off between bias and variance. Various plotting functions help visualize estimated densities, modes, clusters, and significance features. For regression, the package implements nonparametric estimation of the mean regression function as well as other conditional characteristics, including modal regression and generalized regression. Bandwidth selection is also supported in the regression context, and testing procedures are available to assess structural features or effects in circular regression models.
 Depends: R(>= 3.5.0), circular
 License: GPL (>= 2)
 Imports: Rcpp (>= 1.0.8.3), misc3d, movMF, plotrix, rgl, shape,
@@ -35,7 +34,7 @@ Imports: Rcpp (>= 1.0.8.3), misc3d, movMF, plotrix, rgl, shape,
 LinkingTo: Rcpp, RcppArmadillo
 URL: https://www.jstatsoft.org/v61/i09/
 NeedsCompilation: yes
-Packaged: 2025-11-11 10:27:07 UTC; littl
+Packaged: 2026-02-19 16:39:58 UTC; littl
 Author: Maria Alonso-Pena [aut, cre],
   Maria Oliveira [aut],
   Jose Ameijeiras-Alonso [aut],
@@ -44,4 +43,4 @@ Author: Maria Alonso-Pena [aut, cre],
   Alberto Rodriguez-Casal [aut],
   Felicita Scapini [dtc]
 Repository: CRAN
-Date/Publication: 2025-11-12 06:20:23 UTC
+Date/Publication: 2026-02-20 06:40:22 UTC

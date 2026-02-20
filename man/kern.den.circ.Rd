@@ -45,11 +45,11 @@ kern.den.circ(x,z=NULL,bw="AA",deriv.order=0,kernel="vonmises",na.rm = FALSE,
   \item{has.na}{logical, for compatibility (always FALSE).}
 }
 \references{
-Ameijeiras-Alonso, J. (2022) A reliable data-based smoothing parameter selection method for circular kernel estimation.
+Ameijeiras-Alonso, J. (2024). A reliable data-based smoothing parameter selection method for circular kernel estimation. Statistics and Computing Stat Comput, 34, 73.
 
 Di Marzio, M., Panzera, A., & Taylor, C. C. (2011). Kernel density estimation on the torus. \emph{Journal of Statistical Planning and Inference}, \bold{141}(6), 2156--2173.
 
-Oliveira, M., Crujeiras R.M. and Rodr?guez-Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software},
+Oliveira, M., Crujeiras R.M. and Rodriguez-Casal, A. (2014) NPCirc: an R package for nonparametric circular methods. \emph{Journal of Statistical Software},
 \bold{61}(9), 1--26. \url{https://www.jstatsoft.org/v61/i09/}
 }
 \author{
